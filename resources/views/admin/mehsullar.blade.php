@@ -36,7 +36,7 @@
                   <th>Ürün Endirim Fiyat</th>
                   <th>Resim İşlemleri</th>
                   <th>Yenile</th>
-                  <th>Sill</th>
+                  <th>Sil</th>
                   
                 </tr>
               </thead>
