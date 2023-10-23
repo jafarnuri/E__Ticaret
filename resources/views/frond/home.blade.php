@@ -8,7 +8,7 @@
         <div class="row align-items-start align-items-md-center justify-content-end">
         <img src="{{asset('/')}}frondend/images/cloth_2.jpg" alt="Image placeholder" class="img-fluid">
           <div class="col-md-5 text-center text-md-left pt-5 pt-md-0">
-            <h1 class="mb-2">Finding Your Perfect Shoes</h1>
+            <h1 class="mb-2">Dadash Mellim hardayan?</h1>
             <div class="intro-text text-center text-md-left">
               <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer accumsan tincidunt fringilla. </p>
               <p>
