@@ -6,5 +6,5 @@ use Illuminate\Http\Request;
 
 class SherhlerController extends Controller
 {
-    //
+    
 }

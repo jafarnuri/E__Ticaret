@@ -5,10 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Ayarlar;
 
-use App\Models\Haqqimizda;
-use App\Models\Kategori;
+
 use App\Models\Kullanici;
-use App\Models\Mehsullar;
+
 use App\Models\Sherhler;
 
 class AyarController extends Controller
