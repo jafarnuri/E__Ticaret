@@ -106,7 +106,7 @@
 
                     </form>
                     
-                    <form action="{{url('/genelayar_yenile/'.$ayarlar->id)}}" method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                    <form action="{{route('genel_ayar_yenile')}}" method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
                          @csrf
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Site bashligi <span class="required">*</span>
