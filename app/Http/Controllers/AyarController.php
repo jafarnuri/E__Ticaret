@@ -6,27 +6,30 @@ use Illuminate\Http\Request;
 use App\Models\Ayarlar;
 
 
-use App\Models\Kullanici;
 
-use App\Models\Sherhler;
 
 class AyarController extends Controller
 {
-    public function genel_ayar_yenile(Request $request)
+    public function genel_ayar_yenile($id, Request $request)
     {
-     $ayarlar=Ayarlar::first();
-     $ayarlar->ayar_bashliq= $request->input('ayar_bashliq');
-     $ayarlar->ayar_achiqlama= $request->input('ayar_achiqlama');
-     $ayarlar->ayar_kilidsoz= $request->input('ayar_kilidsoz');
-     $ayarlar->ayar_yazar= $request->input('ayar_yazar');
-     $ayarlar->ayar_bashliq= $request->input('ayar_bashliq');
-     $ayarlar->ayar_bashliq= $request->input('ayar_bashliq');
+
+    $ayar_bashliq=$request->ayar_bashliq;
+    $ayar_achiqlama=$request->ayar_achiqlama;
+    $ayar_kilidsoz=$request->ayar_kilidsoz;
+    $ayar_yazar=$request->ayar_yazar;
+
+    Ayarlar::whereId($id)->update([
+        "ayar_bashliq"=>$ayar_bashliq,
+        "ayar_achiqlama"=>$ayar_achiqlama,
+        "ayar_kilidsoz"=>$ayar_kilidsoz,
+        "ayar_yazar"=>$ayar_yazar,
 
 
+    ]);
+    return back ()->with("status","Yenilenme ugurla yerine yetirildi... ");
 
-    $ayarlar->update();
-    return back()->with("status","Yenileme ugurla yerine yetirildi");    
     }
+
 
     public function baglanti_ayar_yenile(Request $request)
     {
@@ -44,6 +47,25 @@ class AyarController extends Controller
 
     $ayarlar->update();
     return back()->with("status","Yenileme ugurla yerine yetirildi");    
+    }
+        public function kategori_yenile($id, Request $request)
+    {
+
+    $kategori_ad=$request->kategori_ad;
+    $kategori_ust=$request->kategori_ust;
+    $kategori_seourl=$request->kategori_seourl;
+    $kategori_sira=$request->kategori_sira;
+
+    Kategori::whereId($id)->update([
+        "kategori_ad"=>$kategori_ad,
+        "kategori_ust"=>$kategori_ust,
+        "kategori_seourl"=>$kategori_seourl,
+        "kategori_sira"=>$kategori_sira,
+
+
+    ]);
+    return back ()->with("status","Yenilenme ugurla yerine yetirildi... ");
+
     }
 
     public function sosial_ayar_yenile(Request $request)
