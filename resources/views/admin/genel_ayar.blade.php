@@ -37,6 +37,13 @@
                   </div>
                   <div class="x_content">
                     <br />
+                    @if(Session::has("status"))
+                        <br>
+                        <div class="alert alert-success">
+                          {{Session::get('status')}}
+
+                        </div>
+                     @endif
 
                     <form action="" method="POST" enctype="multipart/form-data"  data-parsley-validate class="form-horizontal form-label-left">
                     @csrf
@@ -105,7 +112,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Site bashligi <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="first-name" name="" 
+                          <input type="text" id="first-name" name="ayar_bashliq" 
                           value="" required="required"  class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
@@ -114,7 +121,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Site aciklamasi <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="first-name" name=""
+                          <input type="text" id="first-name" name="ayar_achiqlama"
                           value="" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
@@ -123,7 +130,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Ste anahtar kelme <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="first-name" name=""
+                          <input type="text" id="first-name" name="ayar_kilidsoz"
                           value="" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
@@ -132,7 +139,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Ste yazar <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="first-name"name=""
+                          <input type="text" id="first-name"name="ayar_yazar"
                           value="" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>

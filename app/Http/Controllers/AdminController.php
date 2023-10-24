@@ -14,73 +14,87 @@ use App\Models\Sherhler;
 class AdminController extends Controller
 {
     public function genelayar(){
-        return view('admin.genel_ayar');
+        $ayarlar=Ayarlar::first();
+        return view('admin.genel_ayar')->with('ayarlar',$ayarlar);
 
     }
 
     public function sosialayar(){
-        return view('admin.sosial_ayar');
+        $ayarlar=Ayarlar::first();
+        return view('admin.sosial_ayar')->with('ayarlar',$ayarlar);
 
     }
 
     public function iletisimayar(){
-        return view('admin.iletisim_ayar');
+        $ayarlar=Ayarlar::first();
+        return view('admin.iletisim_ayar')->with('ayarlar',$ayarlar);
 
     }
 
     public function haqqimizda(){
-        return view('admin.haqqimizda');
+        $haqqimizda=Haqqimizda::first();
+        return view('admin.haqqimizda')->with('haqqimizda',$haqqimizda);
 
     }
     public function kategori(){
-        return view('admin.kategoriyalar');
+        $kategori=Kategori::get();
+        return view('admin.kategoriyalar')->with('kategori',$kategori);
 
     }
 
     public function kategorielaveet(){
+        
         return view('admin.kategori_elaveet');
 
     }
 
-    public function kategoriduzenle(){
-        return view('admin.kategori_duzenle');
+    public function kategoriduzenle($id){
+        $kategori=Kategori::find($id);
+        return view('admin.kategoriyalar')->with('kategori',$kategori);
 
     }
 
     public function sherhler(){
-        return view('admin.sherhler');
+        $sherhler=Sherhler::get();
+        return view('admin.sherhler')->with('sherhler',$sherhler);
 
     }
 
     public function banklar(){
-        return view('admin.bank');
+        $bank=Bank::get();
+        return view('admin.bank')->with('bank',$bank);
 
     }
 
     public function bankelaveet(){
+        
         return view('admin.bank_elaveet');
 
     }
 
-    public function bankduzenle(){
-        return view('admin.bank_duzenle');
+    public function bankduzenle($id){
+        $bank=Bank::find($id);
+        return view('admin.bank_duzenle')->with('bank',$bank);
 
     }
 
     public function mehsullar(){
-        return view('admin.mehsullar');
+        $mehsullar=Mehsullar::get();
+        return view('admin.mehsullar')->with('mehsullar',$mehsullar);
 
     }
 
 
     public function mehsulyukle(){
+        
         return view('admin.mehsul_yukle');
 
     }
 
 
-    public function mehsulduzenle(){
-        return view('admin.mehsul_duzenle');
+    public function mehsulduzenle($id){
+        $mehsullar=Mehsullar::find($id);
+        return view('admin.mehsul_duzenle')->with('mehsullar',$mehsullar);
 
     }
 
