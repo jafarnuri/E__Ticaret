@@ -1,7 +1,4 @@
-<?php
-use App\Models\Ayarlar;
-$ayarlar=Ayarlar::first();
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 

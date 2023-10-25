@@ -72,7 +72,7 @@ Route::get('/mehsulduzenle',[AdminController::class, 'mehsulduzenle'])->name('me
 
 
 //AyarController
-Route::post('/genelayar-yenile', [AyarController::class,'genel_ayar_yenile'])->name('genel_ayar_yenile');
+Route::post('/genelayarelaveet', [AyarController::class,'genelayarelaveet'])->name('genelayarelaveet');
 Route::post('/baglantiayar_yenile', [AyarController::class,'baglanti_ayar_yenile'])->name('baglanti_ayar_yenile');
 Route::post('/sosialayar_yenile', [AyarController::class,'sosial_ayar_yenile'])->name('sosial_ayar_yenile');
 
