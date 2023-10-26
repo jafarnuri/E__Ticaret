@@ -22,33 +22,39 @@
           <div class="x_content">
 
 
+          @if(Session::has("status"))
+                        <br>
+                        <div class="alert alert-success">
+                          {{Session::get('status')}}
 
+                        </div>
+                     @endif
 
             <!-- Div İçerik Başlangıç -->
-            <input type="hidden" >
+            <input type="hidden"{{$say='1'}} >
 
             <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
               <thead>
                 <tr>
-                  <th></th>
-                  <th></th>
+                  <th>Sira</th>
+                  <th>Kategoriya Ad</th>
                   <th><center>Yenile</center></th>
                   <th><center>Sil</center></th>
                 </tr>
-              </thead>
+              </thead>  
 
               <tbody>
            
-
+                @foreach($kategori as $kategoricek)
                 <tr> 
-                 <td width="20"></td>
-                 <td></td>
-                 <td><center><a href="{{route('kategoriduzenle')}}"><button class="btn btn-primary btn-xs"><i class="fa fa-rotate-right"></i></button></a></center></td>
+                 <td width="20">{{$say}}</td>
+                 <td>{{$kategoricek->kategori_ad}}</td>
+                 <td><center><a href="{{url('/kategoriyenile/'.$kategoricek->id)}}"><button class="btn btn-primary btn-xs"><i class="fa fa-rotate-right"></i></button></a></center></td>
                  <td><center><a href=""><button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button></a></center></td>
                 </tr>
-                 <input type="hidden" >
-              
-              </tbody>
+                 <input type="hidden" {{$say++}}>
+              @endforeach
+              </tbody>                                               
             </table>
 
     </div>

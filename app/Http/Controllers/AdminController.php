@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Ayarlar;
@@ -50,9 +51,9 @@ class AdminController extends Controller
 
     }
 
-    public function kategoriduzenle($id){
+    public function kategoriyenile($id){
         $kategori=Kategori::find($id);
-        return view('admin.kategoriyalar')->with('kategori',$kategori);
+        return view('admin.kategori_duzenle')->with('kategori',$kategori);
 
     }
 

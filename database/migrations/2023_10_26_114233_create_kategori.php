@@ -12,11 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('kategori', function (Blueprint $table) {
+            
             $table->id('kategori_id');
             $table->string('kategori_ad');
-            $table->integer('kategori_ust');
-            $table->string('kategori_seourl');
-            $table->integer('kategori_sira');
             $table->timestamps();
         });
     }

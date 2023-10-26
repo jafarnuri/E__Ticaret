@@ -35,15 +35,22 @@
                   </div>
                   <div class="x_content">
                     <br />
+                    @if(Session::has("status"))
+                        <br>
+                        <div class="alert alert-success">
+                          {{Session::get('status')}}
 
-                     <form action="" method="POST" enctype="multipart/form-data"  data-parsley-validate class="form-horizontal form-label-left">
+                        </div>
+                     @endif
+
+                     <form action="{{route('haqqimizdalogo')}}" method="POST" enctype="multipart/form-data"  data-parsley-validate class="form-horizontal form-label-left">
                     @csrf
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Yuklu Logo <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                          
-                         <img width="200"  src="" alt="">
+                         <img width="200"  src="{{asset('dimg/logo/'.$haqqimizda->haqqimizda_logo)}}" alt="">
                         
                         </div>
                       </div>
@@ -52,7 +59,7 @@
                       <div class="form-group">
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name" >Logo Sec <span class="required">*</span></label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input type="file" id="first-name" name="" class="form-control col-md-7 col-xs-12">
+                        <input type="file" id="first-name" name="haqqimizda_logo" class="form-control col-md-7 col-xs-12">
                       </div>
 
                         </div>
@@ -64,14 +71,14 @@
                       
 
                     </form>
-                    <form action="" method="POST"  id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                    <form action="{{route('haqqimizdayenile')}}" method="POST"  id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
                       @csrf
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Baslik <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="first-name" name="" 
-                          value="" required="required"  class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="first-name" name="haqqimizda_baslik" 
+                          value="{{$haqqimizda->haqqimizda_baslik}}" required="required"  class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
 
@@ -79,7 +86,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">İcerik <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                        <textarea  class="form-control col-md-7 col-xs-12" id="first-name" name=""></textarea>
+                        <textarea value="{{$haqqimizda->haqqimizda_umumi}}"  class="form-control col-md-7 col-xs-12" id="first-name" name="haqqimizda_umumi"></textarea>
                         </div>
                       </div>
                      
@@ -87,8 +94,8 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Video <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="first-name" name=""
-                          value="" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="first-name" name="haqqimizda_vidio"
+                          value="{{$haqqimizda->haqqimizda_vidio}}" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
 

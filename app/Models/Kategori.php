@@ -9,6 +9,6 @@ class Kategori extends Model
 {
     use HasFactory;
     protected $table="kategori";
-    protected $fillabe=["kategori_id ",
-    "kategori_ad","kategori_ust","kategori_seourl","kategori_sira","created_at","updated_at"];
+    protected $fillabe=["kategori_id",
+    "kategori_ad","created_at","updated_at"];
 }

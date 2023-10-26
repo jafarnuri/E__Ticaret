@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Ayarlar;
 use App\Models\Sosial;
 use App\Models\Baglanti;
+use App\Models\Haqqimizda;
+use App\Models\Kategori;
+
 use Illuminate\Support\Facades\File;
 
 class AyarController extends Controller
@@ -23,6 +26,54 @@ class AyarController extends Controller
 
 
     return back()->with("status","Yenilenme ugurla yerine yetirildi ");
+
+ }
+
+ public function logoyenile(Request $request)
+ {
+         $ayarlar=Ayarlar::first();
+         if($request->hasfile('ayar_logo'))
+         {
+            $deleteOldImage='dimg/logo/'.$ayarlar->ayar_logo;
+            if(File::exists($deleteOldImage))
+           {
+             File::delete($deleteOldImage);
+           }
+           $image=$request->file('ayar_logo');
+           $imagename=time().'_'.uniqid().'.'.$image->getClientOriginalExtension();
+           $image->move('dimg/logo',$imagename);
+           $ayarlar ->ayar_logo = $imagename;
+ 
+         }
+         
+         $ayarlar->update();
+         
+       return back()->with("status","Yenilenme ugurla yerine yetirildi");
+    
+
+ }
+
+ public function resimyenile (Request $request)
+ {
+         $ayarlar=Ayarlar::first();
+         if($request->hasfile('ayar_resim'))
+         {
+            $deleteOldImage='dimg/resim/'.$ayarlar->ayar_resim;
+            if(File::exists($deleteOldImage))
+           {
+             File::delete($deleteOldImage);
+           }
+           $image=$request->file('ayar_resim');
+           $imagename=time().'_'.uniqid().'.'.$image->getClientOriginalExtension();
+           $image->move('dimg/resim',$imagename);
+           $ayarlar ->ayar_resim = $imagename;
+ 
+         }
+         
+         $ayarlar->update();
+         
+       return back()->with("status","Yenilenme ugurla yerine yetirildi");
+    
 
  }
 
@@ -61,4 +112,51 @@ public function baglantiyenile( Request $request){
    return back()->with("status","Yenilenme ugurla yerine yetirildi ");
 
 }
+
+public function haqqimizdayenile(Request $request)
+{ 
+    $haqqimizda=Haqqimizda::first();
+    $haqqimizda->haqqimizda_baslik=$request->input('haqqimizda_baslik');
+    $haqqimizda->haqqimizda_umumi=$request->input('haqqimizda_umumi');
+    $haqqimizda->haqqimizda_vidio=$request->input('haqqimizda_vidio');
+    $haqqimizda->update();
+
+    return back()->with("status","Yenilenme ugurla yerine yetirildi");
+
+}
+
+public function haqqimizdalogo(Request $request)
+{
+        $haqqimizda=Haqqimizda::first();
+        if($request->hasfile('haqqimizda_logo'))
+        {
+           $deleteOldImage='dimg/logo/'.$haqqimizda->haqqimizda_logo;
+           if(File::exists($deleteOldImage))
+          {
+            File::delete($deleteOldImage);
+          }
+          $image=$request->file('haqqimizda_logo');
+          $imagename=time().'_'.uniqid().'.'.$image->getClientOriginalExtension();
+          $image->move('dimg/logo',$imagename);
+          $haqqimizda ->haqqimizda_logo = $imagename;
+
+        }
+        
+        $haqqimizda->update();
+        
+      return back()->with("status","Yenilenme ugurla yerine yetirildi");
+   
+
+}
+public function kategorielaveet(Request $request)
+{ 
+    $kategori= new Kategori();
+    $kategori->kategori_ad=$request->input('kategori_ad');
+    $kategori->save();
+
+    return back()->with("status","Yuklenme  ugurla yerine yetirildi");
+
+}
+
+
 }

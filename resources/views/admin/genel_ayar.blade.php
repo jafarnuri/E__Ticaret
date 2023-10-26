@@ -45,14 +45,14 @@
                         </div>
                      @endif
 
-                    <form action="" method="POST" enctype="multipart/form-data"  data-parsley-validate class="form-horizontal form-label-left">
+                    <form action="{{route('logoyenile')}}" method="POST" enctype="multipart/form-data"  data-parsley-validate class="form-horizontal form-label-left">
                     @csrf
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Yuklu Logo <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                          
-                         <img width="200"  src="" alt="">
+                         <img width="200"  src="{{asset('dimg/logo/'.$ayarlar->ayar_logo)}}" alt="">
                         
                         </div>
                       </div>
@@ -61,7 +61,7 @@
                       <div class="form-group">
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name" >Logo Sec <span class="required">*</span></label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input type="file" id="first-name" name="" class="form-control col-md-7 col-xs-12">
+                        <input type="file" id="first-name" name="ayar_logo" class="form-control col-md-7 col-xs-12">
                       </div>
 
                         </div>
@@ -75,17 +75,16 @@
                     </form>
 
 
-                  
               
    <hr>
 
-                       <form action="" method="POST" enctype="multipart/form-data"  data-parsley-validate class="form-horizontal form-label-left">
+                       <form action="{{route('resimyenile')}}" method="POST" enctype="multipart/form-data"  data-parsley-validate class="form-horizontal form-label-left">
                            @csrf
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Yuklu Resim <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12"> 
-                            <img width="200" src="" alt="">
+                            <img width="200" src="{{asset('dimg/resim/'.$ayarlar->ayar_resim)}}" alt="">
                         </div>
                       </div>
         
@@ -93,7 +92,7 @@
                       <div class="form-group">
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name" >Resim Sec <span class="required">*</span></label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input type="file" id="first-name" name=""  class="form-control col-md-7 col-xs-12">
+                        <input type="file" id="first-name" name="ayar_resim"  class="form-control col-md-7 col-xs-12">
                       </div>
 
                         </div>

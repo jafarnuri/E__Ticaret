@@ -62,7 +62,7 @@ Route::get('/bankduzenle',[AdminController::class, 'bankduzenle'])->name('bankdu
 Route::get('/sherhler',[AdminController::class, 'sherhler'])->name('sherhler');
 Route::get('/kategori',[AdminController::class, 'kategori'])->name('kategori');
 Route::get('/kategorielaveet',[AdminController::class, 'kategorielaveet'])->name('kategorielaveet');
-Route::get('/kategoriduzenle',[AdminController::class, 'kategoriduzenle'])->name('kategoriduzenle');
+Route::get('/kategoriyenile/{id}',[AdminController::class, 'kategoriyenile'])->name('kategoriyenile');
 Route::get('/haqqimizda',[AdminController::class, 'haqqimizda'])->name('haqqimizda');
 Route::get('/girish',[AdminController::class, 'girish'])->name('girish');
 Route::get('/qeydiyyat',[AdminController::class, 'qeydiyyat'])->name('qeydiyyat');
@@ -72,6 +72,8 @@ Route::get('/mehsulduzenle',[AdminController::class, 'mehsulduzenle'])->name('me
 
 
 //AyarController
+Route::post('/logoyenile', [AyarController::class,'logoyenile'])->name('logoyenile');
+Route::post('/resimyenile', [AyarController::class,'resimyenile'])->name('resimyenile');
 Route::post('/genelayaryenile', [AyarController::class,'genelayaryenile'])->name('genelayaryenile');
 Route::post('/baglantiyenile', [AyarController::class,'baglantiyenile'])->name('baglantiyenile');
 Route::post('/sosialyenile', [AyarController::class,'sosialyenile'])->name('sosialyenile');
@@ -82,12 +84,14 @@ Route::post('/bank_yenile/{id}', [BankController::class,'bank_yenile'])->name('b
 Route::get('/banksil/{id}', [BankController::class,'banksil'])->name('banksil');
 
 //HaqqimizdaController
-Route::post('/haqqimizda_yenile', [HaqqimizdaController::class,'haqqimizda_yenile'])->name('haqqimizda_yenile');
+Route::post('/haqqimizdayenile', [AyarController::class,'haqqimizdayenile'])->name('haqqimizdayenile');
+Route::post('/haqqimizdalogo', [AyarController::class,'haqqimizdalogo'])->name('haqqimizdalogo');
+
 
 //KategoriController
-Route::post('/kategori_elavet', [KategoriController::class,'kategori_elavet'])->name('kategori_elavet');
-Route::post('/kategori_yenile/{id}', [KategoriController::class,'kategori_yenile'])->name('kategori_yenile');
-Route::get('/kategori_sil/{id}', [KategoriController::class,'kategori_sil'])->name('kategori_sil');
+Route::post('/kategorielaveet', [AyarController::class,'kategorielaveet'])->name('kategorielaveet');
+//Route::post('/kategoriyenile/{id}', [AyarController::class,'kategoriyenile'])->name('kategoriyenile');
+Route::get('/kategori_sil/{id}', [AyarController::class,'kategori_sil'])->name('kategori_sil');
 
 //KullaniciController 
 Route::post('/kullanici_elavet', [KullaniciController::class,'kullanici_elavet'])->name('kullanici_elavet');
