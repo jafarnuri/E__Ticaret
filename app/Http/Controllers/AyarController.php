@@ -151,8 +151,18 @@ public function haqqimizdalogo(Request $request)
 public function kategorielaveet(Request $request)
 { 
     $kategori= new Kategori();
-    $kategori->kategori_ad=$request->input('kategori_ad');
+    $kategori->kategoriad=$request->input('kategoriad');
     $kategori->save();
+
+    return back()->with("status","Yuklenme  ugurla yerine yetirildi");
+
+}
+
+public function kateduzen($id ,Request $request)
+{ 
+    $kategori= Kategori::all()->find($id);
+    $kategori->kategoriad=$request->input('kategoriad');
+    $kategori->update();
 
     return back()->with("status","Yuklenme  ugurla yerine yetirildi");
 
