@@ -106,14 +106,14 @@
 
                     </form>
                     
-                    <form action="{{route('genelayarelaveet')}}" method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                    <form action="{{url('/genelayarelaveet/'.$ayarlar->id)}}" method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
                          @csrf
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Site bashligi <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" id="first-name" name="ayar_bashliq" 
-                          value="" required="required"  class="form-control col-md-7 col-xs-12">
+                          value="{{$ayarlar->ayar_bashliq}}" required="required"  class="form-control col-md-7 col-xs-12">
                    
                         </div>
                       </div>
@@ -123,7 +123,7 @@
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" id="first-name" name="ayar_achiqlama"
-                          value="" required="required" class="form-control col-md-7 col-xs-12">
+                          value="{{$ayarlar->ayar_achiqlama}}" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                      
@@ -132,7 +132,7 @@
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" id="first-name" name="ayar_kilidsoz"
-                          value="" required="required" class="form-control col-md-7 col-xs-12">
+                          value="{{$ayarlar->ayar_kilidsoz}}" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                      
@@ -141,7 +141,7 @@
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" id="first-name"name="ayar_yazar"
-                          value="" required="required" class="form-control col-md-7 col-xs-12">
+                          value="{{$ayarlar->ayar_yazar}}" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                      
@@ -150,7 +150,7 @@
                       <div class="form-group">
                         <div align="right" class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                           
-                          <button  type="submit" name="" class="btn btn-success">yeni elave et</button>
+                          <button  type="submit" name="genelayarelaveet" class="btn btn-success">Yenile</button>
                         </div>
                       </div>
 
