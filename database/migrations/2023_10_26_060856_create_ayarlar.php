@@ -12,14 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('ayarlar', function (Blueprint $table) {
-            $table->id('ayar_id');
-
+            $table->id();
             $table->string('ayar_bashliq');
-            $table->string('ayar_achiqlama');
+            $table->string('ayar_achiqlamas');
             $table->string('ayar_kilidsoz');
             $table->string('ayar_yazar');
-
-
             $table->timestamps();
         });
     }

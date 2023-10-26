@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Ayarlar;
+use App\Models\Baglanti;
+use App\Models\Sosial;
 use App\Models\Bank;
 use App\Models\Haqqimizda;
 use App\Models\Kategori;
@@ -20,14 +22,14 @@ class AdminController extends Controller
     }
 
     public function sosialayar(){
-        $ayarlar=Ayarlar::first();
-        return view('admin.sosial_ayar')->with('ayarlar',$ayarlar);
+        $sosial=Sosial::first();
+        return view('admin.sosial_ayar')->with('sosial',$sosial);
 
     }
 
     public function iletisimayar(){
-        $ayarlar=Ayarlar::first();
-        return view('admin.iletisim_ayar')->with('ayarlar',$ayarlar);
+        $baglanti=Baglanti::first();
+        return view('admin.iletisim_ayar')->with('baglanti',$baglanti);
 
     }
 

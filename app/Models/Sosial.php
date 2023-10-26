@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Ayarlar extends Model
+class Sosial extends Model
 {
     use HasFactory;
-    protected $table="ayarlar";
+    protected $table="sosial";
     protected $fillabe=["id",
-    "ayar_bashliq","ayar_achiqlamas","ayar_kilidsoz","ayar_yazar","created_at","updated_at"];
+    "sosial_facebook","sosial_twitter","sosial_instagram","sosial_youtube","created_at","updated_at"];
 }

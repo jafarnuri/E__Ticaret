@@ -32,15 +32,22 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
+                  @if(Session::has("status"))
+                        <br>
+                        <div class="alert alert-success">
+                          {{Session::get('status')}}
+
+                        </div>
+                     @endif
    
-                    <form action="" method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                    <form action="{{route('baglantiyenile')}}" method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
                      @csrf
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Telefon nomresi <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="first-name" name="" 
-                          value="" required="required"  class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="first-name" name="baglanti_tel" 
+                          value="{{$baglanti->baglanti_tel}}" required="required"  class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
 
@@ -48,8 +55,8 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Telefon nomresi GSM <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="first-name" name=""
-                          value="" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="first-name" name="baglanti_gsm"
+                          value="{{$baglanti->baglanti_gsm}}" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                      
@@ -57,8 +64,8 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Faks Adres<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="first-name" name=""
-                          value="" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="first-name" name="baglanti_faks"
+                          value="{{$baglanti->baglanti_faks}}" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                      
@@ -66,8 +73,8 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Mail Adres <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="email" id="first-name"name=""
-                          value="" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="email" id="first-name"name="baglanti_mail"
+                          value="{{$baglanti->baglanti_mail}}" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                      
@@ -75,8 +82,8 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Olke <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="first-name" name=""
-                          value="" required="required"  class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="first-name" name="baglanti_olke"
+                          value="{{$baglanti->baglanti_olke}}" required="required"  class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
 
@@ -84,8 +91,8 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Sheher <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="first-name" name="" 
-                          value="" required="required"  class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="first-name" name="baglanti_sheher" 
+                          value="{{$baglanti->baglanti_sheher}}" required="required"  class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
 
@@ -93,8 +100,8 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Adres<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="first-name" name=""  
-                          value="" required="required"  class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="first-name" name="baglanti_adres"  
+                          value="{{$baglanti->baglanti_adres}}" required="required"  class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
 
@@ -102,8 +109,8 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Ish Vaxti <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="first-name" name="" 
-                          value="" required="required"  class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="first-name" name="baglanti_isvaxti" 
+                          value="{{$baglanti->baglanti_isvaxti}}" required="required"  class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                      

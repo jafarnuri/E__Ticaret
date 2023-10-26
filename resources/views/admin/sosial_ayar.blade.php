@@ -34,43 +34,49 @@
                   </div>
                   <div class="x_content">
                     <br />
+                    @if(Session::has("status"))
+                        <br>
+                        <div class="alert alert-success">
+                          {{Session::get('status')}}
 
+                        </div>
+                     @endif
      
-                    <form action="" method="POST"  id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                    <form action="{{route('sosialyenile')}}" method="POST"  id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
                       @csrf
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Facebook Ayar <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Facebook  <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="first-name" name="" 
-                          value="" required="required"  class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="first-name" name="sosial_facebook" 
+                          value="{{$sosial->sosial_facebook}}" required="required"  class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
 
                        <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Twitter Ayar<span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Twitter <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="first-name" name=""
-                          value="" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="first-name" name="sosial_twitter"
+                          value="{{$sosial->sosial_twitter}}" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                      
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Google Ayar <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name"> Instagaram<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="first-name" name=""
-                          value="" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="first-name" name="sosial_instagram"
+                          value="{{$sosial->sosial_instagram}}" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                      
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Youtube Ayar <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Youtube  <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="first-name"name=""
-                          value="" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="first-name"name="sosial_youtube"
+                          value="{{$sosial->sosial_youtube}}" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                      

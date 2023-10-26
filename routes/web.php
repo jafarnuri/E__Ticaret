@@ -72,9 +72,9 @@ Route::get('/mehsulduzenle',[AdminController::class, 'mehsulduzenle'])->name('me
 
 
 //AyarController
-Route::post('/genelayarelaveet/{id}', [AyarController::class,'genelayarelaveet']);
-Route::post('/baglantiayar_yenile', [AyarController::class,'baglanti_ayar_yenile'])->name('baglanti_ayar_yenile');
-Route::post('/sosialayar_yenile', [AyarController::class,'sosial_ayar_yenile'])->name('sosial_ayar_yenile');
+Route::post('/genelayaryenile', [AyarController::class,'genelayaryenile'])->name('genelayaryenile');
+Route::post('/baglantiyenile', [AyarController::class,'baglantiyenile'])->name('baglantiyenile');
+Route::post('/sosialyenile', [AyarController::class,'sosialyenile'])->name('sosialyenile');
 
 //BankController
 Route::post('/bank_elavet', [BankController::class,'bank_elavet'])->name('bank_elavet');
