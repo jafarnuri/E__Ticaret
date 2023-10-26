@@ -51,8 +51,8 @@ class AdminController extends Controller
 
     }
 
-    public function kategoriyenile($id){
-        $kategori=Kategori::find($id);
+    public function kategoriyenile( $id){
+        $kategori = Kategori::all()->find($id);
         return view('admin.kategori_duzenle')->with('kategori',$kategori);
 
     }

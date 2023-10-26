@@ -90,7 +90,6 @@ Route::post('/haqqimizdalogo', [AyarController::class,'haqqimizdalogo'])->name('
 
 //KategoriController
 Route::post('/kategorielaveet', [AyarController::class,'kategorielaveet'])->name('kategorielaveet');
-//Route::post('/kategoriyenile/{id}', [AyarController::class,'kategoriyenile'])->name('kategoriyenile');
 Route::get('/kategori_sil/{id}', [AyarController::class,'kategori_sil'])->name('kategori_sil');
 
 //KullaniciController 
