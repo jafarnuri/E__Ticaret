@@ -23,7 +23,7 @@
 
 
             <!-- Div İçerik Başlangıç -->
-            <input type="hidden" >
+            <input type="hidden" {{$say='1'}}>
             <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
               <thead>
                 <tr>
@@ -34,7 +34,7 @@
                   <th>Ürün Stok</th>
                   <th>Ürün Fiyat</th>
                   <th>Ürün Endirim Fiyat</th>
-                  <th>Resim İşlemleri</th>
+                  <th>Foto</th>
                   <th>Yenile</th>
                   <th>Sil</th>
                   
@@ -42,21 +42,21 @@
               </thead>
 
               <tbody>
-          
+          @foreach($mehsullar as $mehsulcek)
                 <tr>
-                 <td width="20"></td>
-                 <td></td>
-                 <td></td>
-                 <td></td>
-                 <td></td>
-                 <td></td>
-                 <td></td>
-                 <td><img  src="" alt=""></td>
-                 <td><center><a href="{{route('mehsulduzenle')}}"><button class="btn btn-primary btn-xs"><i class="fa fa-rotate-right"></i></button></a></center></td>
-                 <td><center><a href=""><button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button></a></center></td>
+                 <td width="20">{{$say}}</td>
+                 <td>{{$mehsulcek->mehsul_ad}}</td>
+                 <td>{{$mehsulcek->mehsul_model}}</td>
+                 <td>{{$mehsulcek->kategoriad}}</td>
+                 <td>{{$mehsulcek->mehsul_say}}</td>
+                 <td>{{$mehsulcek->mehsul_qiymet}}</td>
+                 <td>{{$mehsulcek->mehsul_endirimqiymet}}</td>
+                 <td><img  src="{{asset('dimg/resim/'.$mehsulcek->mehsul_resm)}}" alt=""></td>
+                 <td><center><a href="{{url('/mehsulduzenle/'.$mehsulcek->id)}}"><button class="btn btn-primary btn-xs"><i class="fa fa-rotate-right"></i></button></a></center></td>
+                 <td><center><a href="{{url('/mehsulsil/'.$mehsulcek->id)}}"><button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button></a></center></td>
                 </tr>
-                <input type="hidden">
-         
+                <input type="hidden" {{$say++}}>
+         @endforeach
         </tbody>
       </table>
     </div>

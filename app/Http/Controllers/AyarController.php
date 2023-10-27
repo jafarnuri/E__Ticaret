@@ -8,6 +8,8 @@ use App\Models\Sosial;
 use App\Models\Baglanti;
 use App\Models\Haqqimizda;
 use App\Models\Kategori;
+use App\Models\Bank;
+use App\Models\Mehsullar;
 
 use Illuminate\Support\Facades\File;
 
@@ -151,7 +153,7 @@ public function haqqimizdalogo(Request $request)
 public function kategorielaveet(Request $request)
 { 
     $kategori= new Kategori();
-    $kategori->kategoriad=$request->input('kategoriad');
+    $kategori->kategoriya_ad=$request->input('kategoriya_ad');
     $kategori->save();
 
     return back()->with("status","Yuklenme  ugurla yerine yetirildi");
@@ -160,13 +162,123 @@ public function kategorielaveet(Request $request)
 
 public function kateduzen($id ,Request $request)
 { 
-    $kategori= Kategori::all()->find($id);
-    $kategori->kategoriad=$request->input('kategoriad');
+    $kategori= Kategori::find($id);
+    $kategori->kategoriya_ad=$request->input('kategoriya_ad');
     $kategori->update();
+
+    return back()->with("status","Yenilenme   ugurla yerine yetirildi");
+
+}
+
+public function katesil($id)
+{ 
+    $kategori= Kategori::find($id);
+    
+    $kategori->delete();
+
+    return back()->with("status","Silinme   ugurla yerine yetirildi");
+
+}
+
+public function bank_elavet(Request $request)
+{ 
+    $bank= new Bank();
+    $bank->bank_ad=$request->input('bank_ad');
+    $bank->bank_kart_kodu=$request->input('bank_kart_kodu');
+    $bank->bank_adsoyad=$request->input('bank_adsoyad');
+    $bank->save();
 
     return back()->with("status","Yuklenme  ugurla yerine yetirildi");
 
 }
 
+public function bank_yenile($id ,Request $request)
+{ 
+    $bank= Bank::find($id);
+    $bank->bank_ad=$request->input('bank_ad');
+    $bank->bank_kart_kodu=$request->input('bank_kart_kodu');
+    $bank->bank_adsoyad=$request->input('bank_adsoyad');
+    $bank->update();
 
+    return back()->with("status","Yenilenme   ugurla yerine yetirildi");
+
+}
+
+public function banksil($id)
+{ 
+    $bank= Bank::find($id);
+    
+    $bank->delete();
+
+    return back()->with("status","Silinme   ugurla yerine yetirildi");
+
+}
+
+
+public function mehsul_elavet(Request $request)
+{ 
+  $imagename='';
+if($image=$request->file('mehsul_resm')){
+    $imagename=time().'_'.uniqid().'.'.$image->getClientOriginalExtension();
+    $image->move('dimg/mehsullar',$imagename);
+
+}
+    $mehsul= new Mehsullar();
+    $mehsul->kategoriad=$request->input('kategoriad');
+    $mehsul->mehsul_ad=$request->input('mehsul_ad');
+    $mehsul->mehsul_model=$request->input('mehsul_model');
+    $mehsul->mehsul_resm=$imagename;
+    $mehsul->mehsul_endirimqiymet=$request->input('mehsul_endirimqiymet');
+    $mehsul->mehsul_qiymet=$request->input('mehsul_qiymet');
+    $mehsul->mehsul_say=$request->input('mehsul_say');
+    $mehsul->save();
+
+    return back()->with("status","Yuklenme  ugurla yerine yetirildi");
+
+}
+
+public function mehsul_yenile($id ,Request $request)
+{ 
+    $mehsul= Mehsullar::find($id);
+    $mehsul->kategoriad=$request->input('kategoriad');
+    $mehsul->mehsul_ad=$request->input('mehsul_ad');
+    $mehsul->mehsul_model=$request->input('mehsul_model');
+    $mehsul->mehsul_endirimqiymet=$request->input('mehsul_endirimqiymet');
+    $mehsul->mehsul_qiymet=$request->input('mehsul_qiymet');
+    $mehsul->mehsul_say=$request->input('mehsul_say');
+    if($request->hasfile('mehsul_resm'))
+    {
+       $deleteOldImage='dimg/mehsullar/'.$mehsul->mehsul_resm;
+       if(File::exists($deleteOldImage))
+      {
+        File::delete($deleteOldImage);
+      }
+      $image=$request->file('mehsul_resm');
+      $imagename=time().'_'.uniqid().'.'.$image->getClientOriginalExtension();
+      $image->move('dimg/mehsullar',$imagename);
+      $mehsul ->mehsul_resm = $imagename;
+
+    }
+  
+    $mehsul->update();
+
+    return back()->with("status","Yenilenme   ugurla yerine yetirildi");
+
+}
+
+public function mehsulsil($id)
+{ 
+    $mehsul= Mehsullar::find($id);
+    $deleteOldImage='dimg/mehsullar/'.$mehsul->mehsul_resm;
+    if(File::exists($deleteOldImage))
+   {
+     File::delete($deleteOldImage);
+   }
+    $mehsul->delete();
+    
+  
+
+    return back()->with("status","Silinme   ugurla yerine yetirildi");
+
+}
 }

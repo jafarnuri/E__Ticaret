@@ -51,9 +51,12 @@ class AdminController extends Controller
 
     }
 
-    public function kategoriyenile( $id){
-        $kategori = Kategori::all()->find($id);
-        return view('admin.kategori_duzenle')->with('kategori',$kategori);
+    public function kategori_yenile($id){
+        $kat=Kategori::find($id);
+        
+
+    return view('admin.kategori_duzenle')->with('kat',$kat);
+
 
     }
 
@@ -89,15 +92,18 @@ class AdminController extends Controller
 
 
     public function mehsulyukle(){
+        $kategori=Kategori::get();
         
-        return view('admin.mehsul_yukle');
+        return view('admin.mehsul_yukle')->with('kategori',$kategori);
 
     }
 
 
     public function mehsulduzenle($id){
         $mehsullar=Mehsullar::find($id);
-        return view('admin.mehsul_duzenle')->with('mehsullar',$mehsullar);
+        $kategori=Kategori::get();
+
+        return view('admin.mehsul_duzenle')->with('mehsullar',$mehsullar)->with('kategori',$kategori);
 
     }
 

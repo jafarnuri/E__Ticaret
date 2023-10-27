@@ -15,11 +15,18 @@
             <div class="clearfix"></div>
           </div>
           <div class="x_content">
-            <br />
+           
+            @if(Session::has("status"))
+                        <br>
+                        <div class="alert alert-success">
+                          {{Session::get('status')}}
+
+                        </div>
+                     @endif
 
 
             <!-- / => en kök dizine çık ... ../ bir üst dizine çık -->
-            <form action="" method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+            <form action="{{url('/bank_yenile/'.$bank->id)}}" method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
             @csrf
 
@@ -27,8 +34,8 @@
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Banka Ad <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input type="text" id="first-name" name="" 
-                  value="" placeholder="Banka adını giriniz" required="required" class="form-control col-md-7 col-xs-12">
+                  <input type="text" id="first-name" name="bank_ad" 
+                  value="{{$bank->bank_ad}}" placeholder="Banka adını giriniz" required="required" class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
 
@@ -36,8 +43,8 @@
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Banka IBAN <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input type="text" id="first-name" name="" 
-                  value="" placeholder="Banka IBAN giriniz" required="required" class="form-control col-md-7 col-xs-12">
+                  <input type="text" id="first-name" name="bank_kart_kodu" 
+                  value="{{$bank->bank_kart_kodu}}" placeholder="Banka IBAN giriniz" required="required" class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
 
@@ -45,8 +52,8 @@
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Banka Hesap Ad Soyad <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input type="text" id="first-name" name=""
-                  value="" placeholder="Ad Soyad Giriniz" required="required" class="form-control col-md-7 col-xs-12">
+                  <input type="text" id="first-name" name="bank_adsoyad"
+                  value="{{$bank->bank_adsoyad}}" placeholder="Ad Soyad Giriniz" required="required" class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
 

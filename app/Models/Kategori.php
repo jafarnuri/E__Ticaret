@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Kategori extends Model
 {
     use HasFactory;
-    protected $table="kategori";
-    protected $fillabe=["kategori_id",
-    "kategoriad","created_at","updated_at"];
+    protected $table="kategoriya";
+    protected $fillabe=["id",
+    "kategoriya_ad","created_at","updated_at"];
 }

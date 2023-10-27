@@ -22,11 +22,17 @@
           <div class="x_content">
 
           
+          @if(Session::has("status"))
+                        <br>
+                        <div class="alert alert-success">
+                          {{Session::get('status')}}
 
+                        </div>
+                     @endif
 
 
             <!-- Div İçerik Başlangıç -->
-            <input type="hidden" >
+            <input type="hidden" {{$say='1'}}>
 
             <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
               <thead>
@@ -41,18 +47,18 @@
               </thead>
 
               <tbody>
-              
+              @foreach($bank as $bankcek)
 
                 <tr> 
-                 <td width="20"></td>
-                 <td></td>
-                 <td></-td>
-                 <td></td>
-                 <td><center><a href="{{route('bankduzenle')}}"><button class="btn btn-primary btn-xs"><i class="fa fa-rotate-right"></i></button></a></center></td>
-                 <td><center><a href=""><button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button></a></center></td>
+                 <td width="20">{{$say}}</td>
+                 <td>{{$bankcek->bank_ad}}</td>
+                 <td>{{$bankcek->bank_kart_kodu}}</td>
+                 <td>{{$bankcek->bank_adsoyad}}</td>
+                 <td><center><a href="{{url('/bankduzenle/'.$bankcek->id)}}"><button class="btn btn-primary btn-xs"><i class="fa fa-rotate-right"></i></button></a></center></td>
+                 <td><center><a href="{{url('/banksil/'.$bankcek->id)}}"><button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button></a></center></td>
                 </tr>
-                 <input type="hidden" >
-              
+                 <input type="hidden" {{$say++}}>
+              @endforeach
               </tbody>
             </table>
 

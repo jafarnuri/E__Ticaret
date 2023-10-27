@@ -18,7 +18,7 @@
             <br />
  
             <!-- / => en kök dizine çık ... ../ bir üst dizine çık -->
-            <form action="" method="POST" id="demo-form2" enctype="multipart/form-data"  data-parsley-validate class="form-horizontal form-label-left">
+            <form action="{{route('mehsul_elavet')}}" method="POST" id="demo-form2" enctype="multipart/form-data"  data-parsley-validate class="form-horizontal form-label-left">
             @csrf
    
 
@@ -29,7 +29,7 @@
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Ürün Ad <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input type="text" id="first-name" name="" placeholder="Ürün adnizi girin"  class="form-control col-md-7 col-xs-12">
+                  <input type="text" id="first-name" name="mehsul_ad" placeholder="Ürün adnizi girin"  class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
 
@@ -37,7 +37,7 @@
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Ürün Model <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input type="text" id="first-name" name="" placeholder="Ürün modelin girin"  class="form-control col-md-7 col-xs-12">
+                  <input type="text" id="first-name" name="mehsul_model" placeholder="Ürün modelin girin"  class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
 
@@ -49,28 +49,21 @@
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-6">
 
-                    <select class="select2_multiple form-control" required="" name="" >
-                     
-                       <option value=""></option>
-                      
+                    <select class="select2_multiple form-control" required="" name="kategoriad" >
+                     @foreach($kategori as $katcek)
+                       <option >{{$katcek->kategoriya_ad}}</option>
+                      @endforeach
                      </select>
                    </div>
                  </div>
 
-                <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Ürün Detay <span class="required">*</span>
-                  </label>
-                  <div class="col-md-6 col-sm-6 col-xs-12">
-
-                    <textarea  class="text" id="first-name" name=""></textarea>
-                  </div>
-                </div>
+ 
 
                 <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Ürün Endirim Fiyat 
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input type="text" id="first-name" name="" placeholder="Ürün fiyat giriniz"  class="form-control col-md-7 col-xs-12">
+                  <input type="text" id="first-name" name="mehsul_endirimqiymet" placeholder="Ürün fiyat giriniz"  class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
 
@@ -78,32 +71,18 @@
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Ürün Fiyat <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input type="text" id="first-name" name="" placeholder="Ürün fiyat giriniz"  class="form-control col-md-7 col-xs-12">
+                  <input type="text" id="first-name" name="mehsul_qiymet" placeholder="Ürün fiyat giriniz"  class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
 
-              <div class="form-group">
-                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Ürün Video <span class="required">*</span>
-                </label>
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input type="text" id="first-name" name="" placeholder="Ürün video giriniz" class="form-control col-md-7 col-xs-12">
-                </div>
-              </div>
 
-              <div class="form-group">
-                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Ürün Keyword <span class="required">*</span>
-                </label>
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input type="text" id="first-name" name="" placeholder="Ürün keyword giriniz" required="required" class="form-control col-md-7 col-xs-12">
-                </div>
-              </div>
 
               
               <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Ürün Stok <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input type="text" id="first-name" name="" placeholder="Ürün stok giriniz" required="required" class="form-control col-md-7 col-xs-12">
+                  <input type="text" id="first-name" name="mehsul_say" placeholder="Ürün stok giriniz" required="required" class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
 
@@ -111,7 +90,7 @@
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Ürün Foto <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input type="file" id="first-name" name="" placeholder="" required="required" class="form-control col-md-7 col-xs-12">
+                  <input type="file" id="first-name" name="mehsul_resm" placeholder="" required="required" class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
 

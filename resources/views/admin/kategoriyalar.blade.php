@@ -48,9 +48,9 @@
                 @foreach($kategori as $kategoricek)
                 <tr> 
                  <td width="20">{{$say}}</td>
-                 <td>{{$kategoricek->kategoriad}}</td>
-                 <td><center><a href="{{url('/kategoriyenile/'. $kategoricek->kategori_id)}}"><button class="btn btn-primary btn-xs"><i class="fa fa-rotate-right"></i></button></a></center></td>
-                 <td><center><a href=""><button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button></a></center></td>
+                 <td>{{$kategoricek->kategoriya_ad}}</td>
+                 <td><center><a href="{{url('/kategori_yenile/'. $kategoricek->id)}}"><button class="btn btn-primary btn-xs"><i class="fa fa-rotate-right"></i></button></a></center></td>
+                 <td><center><a href="{{url('/katesil/'.$kategoricek->id)}}"><button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button></a></center></td>
                 </tr>
                  <input type="hidden" {{$say++}}>
               @endforeach

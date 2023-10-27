@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('mehsullar', function (Blueprint $table) {
-            $table->id('mehsul_id');
-            $table->string('kategori_ad');
+            $table->id('id');
+            $table->string('kategoriad');
             $table->string('mehsul_ad');
             $table->string('mehsul_model');
             $table->string('mehsul_resm');
