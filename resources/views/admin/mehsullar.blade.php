@@ -20,7 +20,13 @@
             </div>
           </div>
           <div class="x_content">
+          @if(Session::has("status"))
+                        <br>
+                        <div class="alert alert-success">
+                          {{Session::get('status')}}
 
+                        </div>
+                     @endif
 
             <!-- Div İçerik Başlangıç -->
             <input type="hidden" {{$say='1'}}>
@@ -51,7 +57,7 @@
                  <td>{{$mehsulcek->mehsul_say}}</td>
                  <td>{{$mehsulcek->mehsul_qiymet}}</td>
                  <td>{{$mehsulcek->mehsul_endirimqiymet}}</td>
-                 <td><img  src="{{asset('dimg/resim/'.$mehsulcek->mehsul_resm)}}" alt=""></td>
+                 <td><img  src="{{asset('dimg/mehsullar/'.$mehsulcek->mehsul_resm)}}" alt=""></td>
                  <td><center><a href="{{url('/mehsulduzenle/'.$mehsulcek->id)}}"><button class="btn btn-primary btn-xs"><i class="fa fa-rotate-right"></i></button></a></center></td>
                  <td><center><a href="{{url('/mehsulsil/'.$mehsulcek->id)}}"><button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button></a></center></td>
                 </tr>

@@ -16,7 +16,13 @@
           </div>
           <div class="x_content">
 
-       
+          @if(Session::has("status"))
+                        <br>
+                        <div class="alert alert-success">
+                          {{Session::get('status')}}
+
+                        </div>
+                     @endif
             <!-- / => en kök dizine çık ... ../ bir üst dizine çık -->
             <form action="{{url('/mehsul_yenile/'.$mehsullar->id)}}" method="POST" id="demo-form2" enctype="multipart/form-data" data-parsley-validate class="form-horizontal form-label-left">
 
@@ -50,7 +56,7 @@
                 
                     <select class="select2_multiple form-control" required="" name="kategoriad" >
                   @foreach($kategori as $katcek)
-                       <option  value="{{$mehsullar->kategoriad}}">{{$katcek->kategoriya_ad}}></option>
+                       <option  value="{{$mehsullar->kategoriad}}">{{$katcek->kategoriya_ad}}</option>
                       @endforeach
                      </select>
                    </div>

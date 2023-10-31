@@ -25,8 +25,12 @@ use App\Http\Controllers\SherhlerController;
 */
 
 Route::get('/', function () {
-    return view('frond/home');
+    return view('frond.home');
 })->name('home');
+
+Route::get('/welcome', function () {
+    return view('welcome');
+})->name('welcome');
 
 Route::get('/adminn', function () {
     return view('admin/home');
@@ -46,9 +50,11 @@ require __DIR__.'/auth.php';
 
 //FrontendController
 Route::get('/kategori',[FrontendController::class,'kategori'])->name('kategori');
-Route::get('/haqqimizda',[FrontendController::class,'haqqimizda'])->name('haqqimizda');
+Route::get('/about',[FrontendController::class,'about'])->name('about');
 Route::get('/bizimleelaqe',[FrontendController::class,'bizimleelaqe'])->name('bizimleelaqe');
 Route::get('/sebet',[FrontendController::class,'sebet'])->name('sebet');
+
+Route::get('/girish',[FrontendController::class,'girish'])->name('girish');
 
 
 
@@ -64,11 +70,10 @@ Route::get('/kategori',[AdminController::class, 'kategori'])->name('kategori');
 Route::get('/kategorielaveet',[AdminController::class, 'kategorielaveet'])->name('kategorielaveet');
 Route::get('/kategori_yenile/{id}',[AdminController::class, 'kategori_yenile'])->name('kategori_yenile');
 Route::get('/haqqimizda',[AdminController::class, 'haqqimizda'])->name('haqqimizda');
-Route::get('/girish',[AdminController::class, 'girish'])->name('girish');
-Route::get('/qeydiyyat',[AdminController::class, 'qeydiyyat'])->name('qeydiyyat');
+
 Route::get('/mehsullar',[AdminController::class, 'mehsullar'])->name('mehsullar');
 Route::get('/mehsulyukle',[AdminController::class, 'mehsulyukle'])->name('mehsulyukle');
-Route::get('/mehsulduzenle',[AdminController::class, 'mehsulduzenle'])->name('mehsulduzenle');
+Route::get('/mehsulduzenle/{id}',[AdminController::class, 'mehsulduzenle'])->name('mehsulduzenle');
 
 
 //AyarController

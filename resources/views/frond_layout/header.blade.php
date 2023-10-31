@@ -19,7 +19,9 @@
             <div class="col-6 col-md-4 order-3 order-md-3 text-right">
               <div class="site-top-icons">
                 <ul>
-                  <li><a href="#"><span class="icon icon-person"></span></a></li>
+                        <li><a href="{{route('girish')}}" id="reg" class="site-cart">Login</a><a href="{{route('create')}}" id="reg" class="site-cart">Register</a>
+							              
+                        </li>    
                   <li><a href="#"><span class="icon icon-heart-o"></span></a></li>
                   <li>
                     <a href="cart.html" class="site-cart">
@@ -56,7 +58,7 @@
                 </li>
               </ul>
             </li>
-            <li><a href="{{route('haqqimizda')}}">Haqqimizda</a></li>
+            <li><a href="{{route('about')}}">Haqqimizda</a></li>
             <li><a href="{{route('bizimleelaqe')}}">Bizimle elaqe</a></li>
             
             <li><a href="{{route('sebet')}}">Sebet</a></li>

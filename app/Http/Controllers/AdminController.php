@@ -108,15 +108,7 @@ class AdminController extends Controller
     }
 
 
-    public function girish(){
-        return view('admin.girish');
 
-    }
-
-    public function qeydiyyat(){
-        return view('admin.qeydiyyat');
-
-    }
 
 
 }

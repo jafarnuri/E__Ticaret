@@ -15,7 +15,13 @@
             <div class="clearfix"></div>
           </div>
           <div class="x_content">
-            <br />
+          @if(Session::has("status"))
+                        <br>
+                        <div class="alert alert-success">
+                          {{Session::get('status')}}
+
+                        </div>
+                     @endif
  
             <!-- / => en kök dizine çık ... ../ bir üst dizine çık -->
             <form action="{{route('mehsul_elavet')}}" method="POST" id="demo-form2" enctype="multipart/form-data"  data-parsley-validate class="form-horizontal form-label-left">
@@ -48,10 +54,10 @@
               <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Kategori Seç<span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-6">
-
+                
                     <select class="select2_multiple form-control" required="" name="kategoriad" >
-                     @foreach($kategori as $katcek)
-                       <option >{{$katcek->kategoriya_ad}}</option>
+                  @foreach($kategori as $katcek)
+                       <option  value="{{$katcek->kategoriya_ad}}">{{$katcek->kategoriya_ad}}</option>
                       @endforeach
                      </select>
                    </div>
