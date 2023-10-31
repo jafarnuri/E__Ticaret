@@ -39,8 +39,8 @@
             </a>
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{route('girish')}}"> Giriç </a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{route('qeydiyyat')}}"> Qeydiyyat </a></li>
+                <li class="nav-item"> <a class="nav-link" href=""> Giriç </a></li>
+                <li class="nav-item"> <a class="nav-link" href=""> Qeydiyyat </a></li>
               </ul>
             </div>
           </li> 
