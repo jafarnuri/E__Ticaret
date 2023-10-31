@@ -33,7 +33,7 @@
               <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
 
 
-              <form method="POST" action="{{ route('register') }} class="pt-3">
+              <form method="POST" action="{{ route('register') }}" class="pt-3">
               @csrf
 
                 <div class="form-group">
@@ -53,10 +53,10 @@
                 </div>
                 
                 <div align="right" class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <button  type="submit" name="" class="btn btn-primary">Guncelle</button>
+                          <button  type="submit" name="" class="btn btn-primary">{{ __('Register') }}</button>
                         </div>
                 <div class="text-center mt-4 font-weight-light">
-                  Already have an account? <a href="{{route('girish')}}" class="text-primary">Login</a>
+                  Already have an account? <a href="{{ route('login') }}" class="text-primary">{{ __('Log in') }}</a>
                 </div> 
                 
               </form>

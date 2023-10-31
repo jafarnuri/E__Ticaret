@@ -25,7 +25,7 @@ use App\Http\Controllers\SherhlerController;
 */
 
 Route::get('/', function () {
-    return view('frond.home');
+    return view('frond/home');
 })->name('home');
 
 Route::get('/welcome', function () {
