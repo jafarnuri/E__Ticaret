@@ -40,7 +40,7 @@
                      @endif
 
 
-              <form method="POST" action="" class="pt-3">
+              <form method="POST" action="{{route('girish')}}" class="pt-3">
               @csrf
                 <div class="form-group">
                   <input type="email" id="email" name="email" class="form-control form-control-lg"  placeholder="Email">

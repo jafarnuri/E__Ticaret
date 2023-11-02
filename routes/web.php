@@ -115,11 +115,11 @@ Route::get('/sherhsil/{id}', [SherhlerController::class,'sherhsil'])->name('sher
 
 
 //Auth
-Route::post('register', [AuthController::class,'qeydiyyat'])->name('qeydiyyat');
-Route::get('register', [AuthController::class,'register'])->name('register');
+Route::post('qeydiyyat', [AuthController::class,'qeydiyyat'])->name('qeydiyyat');
+Route::get('qeydiyyat', [AuthController::class,'_qeydiyyat'])->name('_qeydiyyat');
 
-Route::post('login', [AuthController::class,'girish'])->name('girish');
-Route::get('login', [AuthController::class,'login'])->name('login');
+Route::post('girish', [AuthController::class,'girish'])->name('girish');
+Route::get('girish', [AuthController::class,'_girish'])->name('_girish');
 
 
 

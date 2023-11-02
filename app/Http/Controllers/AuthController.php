@@ -1,14 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\UserAdmin;
 
 
 class AuthController extends Controller
 {
-    public function register()
+    public function _qeydiyyat()
     {
 
      return view('admin.register');
@@ -22,16 +22,16 @@ class AuthController extends Controller
         return view ('admin.login');
     }
 
-    public function login()
+    public function _girish()
     {
 
      return view('admin.login');
     }
 
-    public function girish()
+    public function girish(Request $request)
     {
 
-        $data=$request->only('email','name','password');
+        $data=$request->only('email','password');
         if(UserAdmin::attempt($data)){
             return redirect(route('admin'));
         }
