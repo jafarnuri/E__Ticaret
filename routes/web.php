@@ -11,6 +11,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\KullaniciController;
 use App\Http\Controllers\MehsullarController;
 use App\Http\Controllers\SherhlerController;
+use App\Http\Controllers\AuthController;
 
 
 /*
@@ -54,7 +55,7 @@ Route::get('/about',[FrontendController::class,'about'])->name('about');
 Route::get('/bizimleelaqe',[FrontendController::class,'bizimleelaqe'])->name('bizimleelaqe');
 Route::get('/sebet',[FrontendController::class,'sebet'])->name('sebet');
 
-Route::get('/girish',[FrontendController::class,'girish'])->name('girish');
+
 
 
 
@@ -74,6 +75,7 @@ Route::get('/haqqimizda',[AdminController::class, 'haqqimizda'])->name('haqqimiz
 Route::get('/mehsullar',[AdminController::class, 'mehsullar'])->name('mehsullar');
 Route::get('/mehsulyukle',[AdminController::class, 'mehsulyukle'])->name('mehsulyukle');
 Route::get('/mehsulduzenle/{id}',[AdminController::class, 'mehsulduzenle'])->name('mehsulduzenle');
+Route::get('/istifadeci',[AdminController::class, 'istifadeciler'])->name('istifadeci');
 
 
 //AyarController
@@ -112,7 +114,12 @@ Route::post('/sherh_elavet', [SherhlerController::class,'sherh_elavet'])->name('
 Route::get('/sherhsil/{id}', [SherhlerController::class,'sherhsil'])->name('sherhsil');
 
 
+//Auth
+Route::post('register', [AuthController::class,'qeydiyyat'])->name('qeydiyyat');
+Route::get('register', [AuthController::class,'register'])->name('register');
 
+Route::post('login', [AuthController::class,'girish'])->name('girish');
+Route::get('login', [AuthController::class,'login'])->name('login');
 
 
 

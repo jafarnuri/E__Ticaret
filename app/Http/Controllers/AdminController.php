@@ -107,7 +107,12 @@ class AdminController extends Controller
 
     }
 
+    public function istifadeciler(){
+       
+        
+        return view('admin.istifadeciler');
 
+    }
 
 
 
