@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\UserAdmin;
+use Illuminate\View\View;
 
 
 class AuthController extends Controller
@@ -39,5 +40,23 @@ class AuthController extends Controller
             return redirect(route('admin'));
         }
      
+    }
+
+    public function chixish(Request $request)
+    {
+        Auth::guard('web')->logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/adminn');
+    }
+
+    public function profil(Request $request): View
+    {
+        return view('admin.profil', [
+            'user' => $request->user(),
+        ]);
     }
 }

@@ -35,7 +35,7 @@ Route::get('/welcome', function () {
 
 Route::get('/adminn', function () {
     return view('admin/home');
-})->name('admin');
+})->middleware(['auth', 'verified'])->name('admin');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -56,9 +56,9 @@ Route::get('/bizimleelaqe',[FrontendController::class,'bizimleelaqe'])->name('bi
 Route::get('/sebet',[FrontendController::class,'sebet'])->name('sebet');
 
 
+Route::middleware('auth')->group(function () {
 
-
-
+Route::get('/profile', [AuthController::class, 'profil'])->name('profile.yenile');
 //AdminController
 Route::get('/genelayar',[AdminController::class, 'genelayar'])->name('genelayar');
 Route::get('/sosialayar',[AdminController::class, 'sosialayar'])->name('sosialayar');
@@ -120,9 +120,11 @@ Route::get('qeydiyyat', [AuthController::class,'_qeydiyyat'])->name('_qeydiyyat'
 
 Route::post('girish', [AuthController::class,'girish'])->name('girish');
 Route::get('girish', [AuthController::class,'_girish'])->name('_girish');
+Route::get('chixish', [AuthController::class, 'chixish'])
+->name('chixish');
 
-
-
+});
+require __DIR__.'/auth.php';
 
 
 

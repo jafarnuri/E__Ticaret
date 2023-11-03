@@ -73,13 +73,13 @@
               <img src="{{asset('/')}}admin/images/faces/face28.jpg" alt="profile"/>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item">
+              <a class="dropdown-item" href="{{route('profile.yenile')}}">
                 <i class="ti-settings text-primary"></i>
-                Settings
+                Hesabim
               </a>
-              <a class="dropdown-item">
+              <a class="dropdown-item" href="{{route('chixish')}}">
                 <i class="ti-power-off text-primary"></i>
-                Logout
+               Logout
               </a>
             </div>
           </li>
