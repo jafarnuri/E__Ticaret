@@ -32,11 +32,11 @@ class AuthController extends Controller
     {
 
         $data=$request->only('email','password');
-        if(UserAdmin::attempt($data)){
-            return redirect(route('admin'));
+        if(!Auth::attempt($data)){
+            return redirect(route('_girish'))->with('status',"Yanlis email ve ya shifre");
         }
         else{
-            return back()->with('status',"Yanlis email ve ya shifre");
+            return redirect(route('admin'));
         }
      
     }
