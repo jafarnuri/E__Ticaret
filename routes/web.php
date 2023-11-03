@@ -28,6 +28,9 @@ use App\Http\Controllers\AuthController;
 Route::get('/', function () {
     return view('frond/home');
 })->name('home');
+Route::get('/hesabsil', function () {
+    return view('admin/hesabsil');
+})->name('hesabsil');
 
 Route::get('/welcome', function () {
     return view('welcome');

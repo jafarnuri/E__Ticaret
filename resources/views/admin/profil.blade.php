@@ -102,7 +102,7 @@
                       <div class="form-group">
                         <div align="right" class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                           
-                          <button  type="submit" name="" class="btn btn-success">Yenile</button>
+                          <button  type="submit" name="" class="btn btn-primary">Yenile</button>
                         </div>
                       </div>
 
@@ -147,7 +147,7 @@
                       <div class="form-group">
                         <div align="right" class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                           
-                          <button  type="submit" name="" class="btn btn-success">Yenile</button>
+                          <button  type="submit" name="" class="btn btn-primary">Yenile</button>
                         </div>
                       </div>
 
@@ -166,49 +166,15 @@
         </p>
     </header>
     <div class="ln_solid"></div>
-                      <div class="form-group">
+    <div class="form-group">
         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-    <button  type="submit" name="" class="btn btn-danger"  >{{ __('Hesabi sil') }}</button>
+        <a href="{{route('hesabsil')}}">
+    <button   type="submit" name="" class="btn btn-danger">Hesabi sil</button></a>
             </div>
             </div>
 
     
-        <form method="post" action="" class="p-6">
-            @csrf
-            @method('delete')
 
-            <h2 class="text-lg font-medium text-gray-900">
-                {{ __('Hesabınızı silmək istədiyinizə əminsiniz?') }}
-            </h2>
-
-            <p class="mt-1 text-sm text-gray-600">
-                {{ __('Hesabınız silindikdən sonra onun bütün resursları və məlumatları həmişəlik silinəcək. Hesabınızı həmişəlik silmək istədiyinizi təsdiqləmək üçün parolunuzu daxil edin.') }}
-            </p>
-
-            <div class="mt-6">
-               
-
-                <input
-                    id="password"
-                    name="password"
-                    type="password"
-                    class="mt-1 block w-3/4"
-                    placeholder="Parol "
-                />
-
-               
-            </div>
-
-            <div class="mt-6 flex justify-end">
-                <button x-on:click="$dispatch('close')">
-                    {{ __('Legv et') }}
-                <button>
-
-                <button class="ml-3">
-                    {{ __('Sil') }}
-                </button>
-            </div>
-        </form>
    
 </section>
 
