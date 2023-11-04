@@ -11,7 +11,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\KullaniciController;
 use App\Http\Controllers\MehsullarController;
 use App\Http\Controllers\SherhlerController;
-use App\Http\Controllers\AuthController;
+
 
 
 /*
@@ -28,9 +28,6 @@ use App\Http\Controllers\AuthController;
 Route::get('/', function () {
     return view('frond/home');
 })->name('home');
-Route::get('/hesabsil', function () {
-    return view('admin/hesabsil');
-})->name('hesabsil');
 
 Route::get('/welcome', function () {
     return view('welcome');
@@ -38,7 +35,9 @@ Route::get('/welcome', function () {
 
 Route::get('/adminn', function () {
     return view('admin/home');
-})->middleware(['auth', 'verified'])->name('admin');
+})->name('admin');
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -51,6 +50,13 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+Route::middleware('auth')->group(function () {
+    Route::get('/admin/profile', [AdminProfileController::class, 'edit'])->name('admin.profile.edit');
+    Route::patch('/admin/profile', [AdminProfileController::class, 'update'])->name('admin.profile.update');
+    Route::delete('/admin/profile', [AdminProfileController::class, 'destroy'])->name('admin.profile.destroy');
+});
+
+require __DIR__.'/adminauth.php';
 
 //FrontendController
 Route::get('/kategori',[FrontendController::class,'kategori'])->name('kategori');
@@ -59,9 +65,13 @@ Route::get('/bizimleelaqe',[FrontendController::class,'bizimleelaqe'])->name('bi
 Route::get('/sebet',[FrontendController::class,'sebet'])->name('sebet');
 
 
-Route::middleware('auth')->group(function () {
+Route::get('/admin/dashboard', function () {
+    return view('admin.dashboard');
+})->middleware(['auth:admin', 'verified'])->name('admin.dashboard');
 
-Route::get('/profile', [AuthController::class, 'profil'])->name('profile.yenile');
+require __DIR__.'/adminauth.php';
+
+
 //AdminController
 Route::get('/genelayar',[AdminController::class, 'genelayar'])->name('genelayar');
 Route::get('/sosialayar',[AdminController::class, 'sosialayar'])->name('sosialayar');
@@ -117,17 +127,6 @@ Route::post('/sherh_elavet', [SherhlerController::class,'sherh_elavet'])->name('
 Route::get('/sherhsil/{id}', [SherhlerController::class,'sherhsil'])->name('sherhsil');
 
 
-//Auth
-Route::post('qeydiyyat', [AuthController::class,'qeydiyyat'])->name('qeydiyyat');
-Route::get('qeydiyyat', [AuthController::class,'_qeydiyyat'])->name('_qeydiyyat');
-
-Route::post('girish', [AuthController::class,'girish'])->name('girish');
-Route::get('girish', [AuthController::class,'_girish'])->name('_girish');
-Route::get('chixish', [AuthController::class, 'chixish'])
-->name('chixish');
-
-});
-require __DIR__.'/auth.php';
 
 
 
