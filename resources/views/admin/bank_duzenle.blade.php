@@ -26,7 +26,7 @@
 
 
             <!-- / => en kök dizine çık ... ../ bir üst dizine çık -->
-            <form action="{{url('/bank_yenile/'.$bank->id)}}" method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+            <form action="{{url('/admin/bank_yenile/'.$bank->id)}}" method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
             @csrf
 

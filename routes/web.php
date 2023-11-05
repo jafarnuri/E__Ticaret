@@ -11,6 +11,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\KullaniciController;
 use App\Http\Controllers\MehsullarController;
 use App\Http\Controllers\SherhlerController;
+use App\Http\Controllers\AdminProfilController;
 
 
 
@@ -58,70 +59,67 @@ Route::get('/sebet',[FrontendController::class,'sebet'])->name('sebet');
 //AdminController
 Route::prefix('/admin')->namespace('App\Http\Controllers')->group(function(){
     Route::match(['get','post'],'login','AdminController@login');
+    
     Route::group(['middleware'=>['admin']],function(){
         Route::get('dashboard','AdminController@dashboard');
         Route::get('logout','AdminController@logout');
-    });
-});
-
-
-Route::get('/genelayar',[AdminController::class, 'genelayar'])->name('genelayar');
-Route::get('/sosialayar',[AdminController::class, 'sosialayar'])->name('sosialayar');
-Route::get('/iletisimayar',[AdminController::class, 'iletisimayar'])->name('iletisimayar');
-Route::get('/banklar',[AdminController::class, 'banklar'])->name('banklar');
-Route::get('/bankelaveet',[AdminController::class, 'bankelaveet'])->name('bankelaveet');
-Route::get('/bankduzenle/{id}',[AdminController::class, 'bankduzenle'])->name('bankduzenle');
-Route::get('/sherhler',[AdminController::class, 'sherhler'])->name('sherhler');
-Route::get('/kategori',[AdminController::class, 'kategori'])->name('kategori');
-Route::get('/kategorielaveet',[AdminController::class, 'kategorielaveet'])->name('kategorielaveet');
-Route::get('/kategori_yenile/{id}',[AdminController::class, 'kategori_yenile'])->name('kategori_yenile');
-Route::get('/haqqimizda',[AdminController::class, 'haqqimizda'])->name('haqqimizda');
-
-Route::get('/mehsullar',[AdminController::class, 'mehsullar'])->name('mehsullar');
-Route::get('/mehsulyukle',[AdminController::class, 'mehsulyukle'])->name('mehsulyukle');
-Route::get('/mehsulduzenle/{id}',[AdminController::class, 'mehsulduzenle'])->name('mehsulduzenle');
-Route::get('/istifadeci',[AdminController::class, 'istifadeciler'])->name('istifadeci');
+        Route::get('genelayar','AdminController@genelayar');
+        Route::get('banklar','AdminController@banklar');
+        Route::get('sosialayar','AdminController@sosialayar');
+        Route::get('iletisimayar','AdminController@iletisimayar');
+        Route::get('bankelaveet','AdminController@bankelaveet');
+        Route::get('bankduzenle/{id}','AdminController@logout');
+        Route::get('sherhler','AdminController@sherhler');
+        Route::get('kategori','AdminController@kategori');
+        Route::get('kategorielaveet','AdminController@kategorielaveet');
+        Route::get('kategori_yenile/{id}','AdminController@kategori_yenile');
+        Route::get('haqqimizda','AdminController@haqqimizda');
+        Route::get('mehsullar','AdminController@mehsullar');
+        Route::get('mehsulduzenle/{id}','AdminController@mehsulduzenle');
+        Route::get('mehsulyukle','AdminController@mehsulyukle');
+        Route::get('istifadeci','AdminController@istifadeci');
+        Route::get('haqqimizda','AdminController@haqqimizda');
+        Route::get('haqqimizda','AdminController@haqqimizda');
 
 
 //AyarController
-Route::post('/logoyenile', [AyarController::class,'logoyenile'])->name('logoyenile');
-Route::post('/resimyenile', [AyarController::class,'resimyenile'])->name('resimyenile');
-Route::post('/genelayaryenile', [AyarController::class,'genelayaryenile'])->name('genelayaryenile');
-Route::post('/baglantiyenile', [AyarController::class,'baglantiyenile'])->name('baglantiyenile');
-Route::post('/sosialyenile', [AyarController::class,'sosialyenile'])->name('sosialyenile');
+        Route::post('logoyenile','AyarController@logoyenile');
+        Route::post('resimyenile','AyarController@resimyenile');
+        Route::post('genelayaryenile','AyarController@genelayaryenile');
+        Route::post('baglantiyenile','AyarController@baglantiyenile');
+        Route::post('sosialyenile','AyarController@sosialyenile');
+
 
 //BankController
-Route::post('/bank_elavet', [AyarController::class,'bank_elavet'])->name('bank_elavet');
-Route::post('/bank_yenile/{id}', [AyarController::class,'bank_yenile'])->name('bank_yenile');
-Route::get('/banksil/{id}', [AyarController::class,'banksil'])->name('banksil');
+        Route::post('bank_elavet','AyarController@bank_elavet');
+        Route::post('bank_yenile/{id}','AyarController@bank_yenile');
+        Route::get('banksil/{id}','AyarController@banksil');
+
 
 //HaqqimizdaController
-Route::post('/haqqimizdayenile', [AyarController::class,'haqqimizdayenile'])->name('haqqimizdayenile');
-Route::post('/haqqimizdalogo', [AyarController::class,'haqqimizdalogo'])->name('haqqimizdalogo');
+        Route::post('haqqimizdayenile','AyarController@haqqimizdayenile');
+        Route::post('haqqimizdalogo','AyarController@haqqimizdalogo');
 
 
 //KategoriController
-Route::post('/kategorielaveet', [AyarController::class,'kategorielaveet'])->name('kategorielaveet');
-Route::post('/kateduzen/{id}', [AyarController::class,'kateduzen'])->name('kateduzen');
-Route::get('/katesil/{id}', [AyarController::class,'katesil'])->name('katesil');
+        Route::post('kategorielaveet','AyarController@kategorielaveet');
+        Route::post('kateduzen/{id}','AyarController@kateduzen');
+        Route::get('katesil/{id}','AyarController@katesil');
 
-//KullaniciController 
-Route::post('/kullanici_elavet', [KullaniciController::class,'kullanici_elavet'])->name('kullanici_elavet');
 
 //MehsullarController
-Route::post('/mehsul_elavet', [AyarController::class,'mehsul_elavet'])->name('mehsul_elavet');
-Route::post('/mehsul_yenile/{id}', [AyarController::class,'mehsul_yenile'])->name('mehsul_yenile');
-Route::get('/mehsulsil/{id}', [AyarController::class,'mehsulsil'])->name('mehsulsil');
+        Route::post('mehsul_elavet','AyarController@mehsul_elavet');
+        Route::post('mehsul_yenile/{id}','AyarController@mehsul_yenile');
+        Route::get('mehsulsil/{id}','AyarController@mehsulsil');
 
 
-//SherhlerController
-Route::post('/sherh_elavet', [SherhlerController::class,'sherh_elavet'])->name('sherh_elavet');
-Route::get('/sherhsil/{id}', [SherhlerController::class,'sherhsil'])->name('sherhsil');
+//ProfilController
+        Route::get('profile_edit','AdminProfilController@edit');
+        Route::post('profile_update','AdminProfilController@update');
 
 
-
-
-
+});
+});
 
 
 

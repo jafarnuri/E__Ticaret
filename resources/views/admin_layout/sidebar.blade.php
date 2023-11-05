@@ -15,43 +15,43 @@
             </a>
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="{{route('genelayar')}}">Öncəliklər</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{url('/admin/genelayar')}}">Öncəliklər</a></li>
               </ul>
             </div>
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="{{route('iletisimayar')}}">Bağlantı Məlumatları</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{url('/admin/iletisimayar')}}">Bağlantı Məlumatları</a></li>
               </ul>
             </div>
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="{{route('sosialayar')}}">Sosial Şəbəkə</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{url('/admin/sosialayar')}}">Sosial Şəbəkə</a></li>
               </ul>
             </div>
 
           </li>
 
           <li class="nav-item" >
-            <a class="nav-link" href="{{route('istifadeci')}}">
+            <a class="nav-link" href="{{url('/admin/istifadeci')}}">
               <i class="fa fa-cogs"></i>
               <span class="menu-title">Istifadeciler</span>
             </a>
           </li>
           
           <li class="nav-item" >
-            <a class="nav-link" href="{{route('haqqimizda')}}">
+            <a class="nav-link" href="{{url('/admin/haqqimizda')}}">
               <i class="fa fa-cogs"></i>
               <span class="menu-title">Haqqımızda</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{route('kategori')}}">
+            <a class="nav-link" href="{{url('/admin/kategori')}}">
               <i class="icon-paper menu-icon"></i>
               <span class="menu-title">Kateqoriyalar</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{route('banklar')}}">
+            <a class="nav-link" href="{{url('/admin/banklar')}}">
               <i class="icon-paper menu-icon"></i>
               <span class="menu-title">Bank Məlumatları</span>
             </a>
@@ -59,14 +59,14 @@
 
 
           <li class="nav-item">
-            <a class="nav-link" href="{{route('sherhler')}}">
+            <a class="nav-link" href="">
               <i class="icon-paper menu-icon"></i>
               <span class="menu-title">Şərhlər</span>
             </a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="{{route('mehsullar')}}">
+            <a class="nav-link" href="{{url('/admin/mehsullar')}}">
               <i class="icon-paper menu-icon"></i>
               <span class="menu-title">Mehsullar</span>
             </a>

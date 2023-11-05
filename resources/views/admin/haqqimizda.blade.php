@@ -43,7 +43,7 @@
                         </div>
                      @endif
 
-                     <form action="{{route('haqqimizdalogo')}}" method="POST" enctype="multipart/form-data"  data-parsley-validate class="form-horizontal form-label-left">
+                     <form action="{{url('/admin/haqqimizdalogo')}}" method="POST" enctype="multipart/form-data"  data-parsley-validate class="form-horizontal form-label-left">
                     @csrf
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Yuklu Logo <span class="required">*</span>
@@ -71,7 +71,7 @@
                       
 
                     </form>
-                    <form action="{{route('haqqimizdayenile')}}" method="POST"  id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                    <form action="{{url('/admin/haqqimizdayenile')}}" method="POST"  id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
                       @csrf
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Baslik <span class="required">*</span>

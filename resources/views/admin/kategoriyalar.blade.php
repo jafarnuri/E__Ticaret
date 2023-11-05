@@ -15,7 +15,7 @@
             <div class="clearfix"></div>
 
             <div align="right">
-              <a href="{{route('kategorielaveet')}}"><button class="btn btn-success btn-xs"> Əlavə et</button></a>
+              <a href="{{url('/admin/kategorielaveet')}}"><button class="btn btn-success btn-xs"> Əlavə et</button></a>
 
             </div>
           </div>
@@ -49,8 +49,8 @@
                 <tr> 
                  <td width="20">{{$say}}</td>
                  <td>{{$kategoricek->kategoriya_ad}}</td>
-                 <td><center><a href="{{url('/kategori_yenile/'. $kategoricek->id)}}"><button class="btn btn-primary btn-xs"><i class="fa fa-rotate-right"></i></button></a></center></td>
-                 <td><center><a href="{{url('/katesil/'.$kategoricek->id)}}"><button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button></a></center></td>
+                 <td><center><a href="{{url('/admin/kategori_yenile/'. $kategoricek->id)}}"><button class="btn btn-primary btn-xs"><i class="fa fa-rotate-right"></i></button></a></center></td>
+                 <td><center><a href="{{url('/admin/katesil/'.$kategoricek->id)}}"><button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button></a></center></td>
                 </tr>
                  <input type="hidden" {{$say++}}>
               @endforeach

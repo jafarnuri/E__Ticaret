@@ -24,7 +24,7 @@
                         </div>
                      @endif
             <!-- / => en kök dizine çık ... ../ bir üst dizine çık -->
-            <form action="{{url('/mehsul_yenile/'.$mehsullar->id)}}" method="POST" id="demo-form2" enctype="multipart/form-data" data-parsley-validate class="form-horizontal form-label-left">
+            <form action="{{url('/admin/mehsul_yenile/'.$mehsullar->id)}}" method="POST" id="demo-form2" enctype="multipart/form-data" data-parsley-validate class="form-horizontal form-label-left">
 
             @csrf
           

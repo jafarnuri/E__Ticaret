@@ -40,7 +40,7 @@
                         </div>
                      @endif
    
-                    <form action="{{route('baglantiyenile')}}" method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                    <form action="{{url('/admin/baglantiyenile')}}" method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
                      @csrf
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Telefon nomresi <span class="required">*</span>

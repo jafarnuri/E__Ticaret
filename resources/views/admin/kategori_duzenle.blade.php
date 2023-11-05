@@ -25,7 +25,7 @@
                      @endif
 
             <!-- / => en kök dizine çık ... ../ bir üst dizine çık -->
-            <form action="{{url('/kateduzen/'.$kat->id)}}" method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+            <form action="{{url('/admin/kateduzen/'.$kat->id)}}" method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
             @csrf
 

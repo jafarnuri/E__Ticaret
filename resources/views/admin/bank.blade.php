@@ -15,7 +15,7 @@
             <div class="clearfix"></div>
 
             <div align="right">
-              <a href="{{route('bankelaveet')}}"><button class="btn btn-success btn-xs"> Yeni Ekle</button></a>
+              <a href="{{url('/admin/bankelaveet')}}"><button class="btn btn-success btn-xs"> Yeni Ekle</button></a>
 
             </div>
           </div>
@@ -54,8 +54,8 @@
                  <td>{{$bankcek->bank_ad}}</td>
                  <td>{{$bankcek->bank_kart_kodu}}</td>
                  <td>{{$bankcek->bank_adsoyad}}</td>
-                 <td><center><a href="{{url('/bankduzenle/'.$bankcek->id)}}"><button class="btn btn-primary btn-xs"><i class="fa fa-rotate-right"></i></button></a></center></td>
-                 <td><center><a href="{{url('/banksil/'.$bankcek->id)}}"><button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button></a></center></td>
+                 <td><center><a href="{{url('/admin/bankduzenle/'.$bankcek->id)}}"><button class="btn btn-primary btn-xs"><i class="fa fa-rotate-right"></i></button></a></center></td>
+                 <td><center><a href="{{url('/admin/banksil/'.$bankcek->id)}}"><button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button></a></center></td>
                 </tr>
                  <input type="hidden" {{$say++}}>
               @endforeach

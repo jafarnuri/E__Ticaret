@@ -15,7 +15,7 @@
             <div class="clearfix"></div>
 
             <div align="right">
-              <a href="{{route('mehsulyukle')}}"><button class="btn btn-success btn-xs"> Yeni Ekle</button></a>
+              <a href="{{url('/admin/mehsulyukle')}}"><button class="btn btn-success btn-xs"> Yeni Ekle</button></a>
 
             </div>
           </div>
@@ -58,8 +58,8 @@
                  <td>{{$mehsulcek->mehsul_qiymet}}</td>
                  <td>{{$mehsulcek->mehsul_endirimqiymet}}</td>
                  <td><img  src="{{asset('dimg/mehsullar/'.$mehsulcek->mehsul_resm)}}" alt=""></td>
-                 <td><center><a href="{{url('/mehsulduzenle/'.$mehsulcek->id)}}"><button class="btn btn-primary btn-xs"><i class="fa fa-rotate-right"></i></button></a></center></td>
-                 <td><center><a href="{{url('/mehsulsil/'.$mehsulcek->id)}}"><button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button></a></center></td>
+                 <td><center><a href="{{url('/admin/mehsulduzenle/'.$mehsulcek->id)}}"><button class="btn btn-primary btn-xs"><i class="fa fa-rotate-right"></i></button></a></center></td>
+                 <td><center><a href="{{url('/admin/mehsulsil/'.$mehsulcek->id)}}"><button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button></a></center></td>
                 </tr>
                 <input type="hidden" {{$say++}}>
          @endforeach
