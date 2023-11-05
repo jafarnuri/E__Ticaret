@@ -1,7 +1,7 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="{{route('admin')}}">
+            <a class="nav-link" href="{{url('/admin/dashboard')}}">
               <i class="icon-grid menu-icon"></i>
               <span class="menu-title">Əsas səhifə</span>
             </a>
@@ -31,19 +31,12 @@
 
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-              <i class="icon-head menu-icon"></i>
-              <span class="menu-title">İstifadəçi</span>
-              <i class="menu-arrow"></i>
+          <li class="nav-item" >
+            <a class="nav-link" href="{{route('istifadeci')}}">
+              <i class="fa fa-cogs"></i>
+              <span class="menu-title">Istifadeciler</span>
             </a>
-            <div class="collapse" id="auth">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{route('istifadeci')}}"> Istifadeciler </a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{route('admin.register')}}"> Qeydiyyat </a></li>
-              </ul>
-            </div>
-          </li> 
+          </li>
           
           <li class="nav-item" >
             <a class="nav-link" href="{{route('haqqimizda')}}">

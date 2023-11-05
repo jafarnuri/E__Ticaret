@@ -24,7 +24,7 @@ use App\Http\Controllers\SherhlerController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+//FrontendController
 Route::get('/', function () {
     return view('frond/home');
 })->name('home');
@@ -32,10 +32,6 @@ Route::get('/', function () {
 Route::get('/welcome', function () {
     return view('welcome');
 })->name('welcome');
-
-Route::get('/adminn', function () {
-    return view('admin/home');
-})->name('admin');
 
 
 
@@ -50,13 +46,7 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
-Route::middleware('auth')->group(function () {
-    Route::get('/admin/profile', [AdminProfileController::class, 'edit'])->name('admin.profile.edit');
-    Route::patch('/admin/profile', [AdminProfileController::class, 'update'])->name('admin.profile.update');
-    Route::delete('/admin/profile', [AdminProfileController::class, 'destroy'])->name('admin.profile.destroy');
-});
 
-require __DIR__.'/adminauth.php';
 
 //FrontendController
 Route::get('/kategori',[FrontendController::class,'kategori'])->name('kategori');
@@ -65,14 +55,16 @@ Route::get('/bizimleelaqe',[FrontendController::class,'bizimleelaqe'])->name('bi
 Route::get('/sebet',[FrontendController::class,'sebet'])->name('sebet');
 
 
-Route::get('/admin/dashboard', function () {
-    return view('admin.dashboard');
-})->middleware(['auth:admin', 'verified'])->name('admin.dashboard');
-
-require __DIR__.'/adminauth.php';
-
-
 //AdminController
+Route::prefix('/admin')->namespace('App\Http\Controllers')->group(function(){
+    Route::match(['get','post'],'login','AdminController@login');
+    Route::group(['middleware'=>['admin']],function(){
+        Route::get('dashboard','AdminController@dashboard');
+        Route::get('logout','AdminController@logout');
+    });
+});
+
+
 Route::get('/genelayar',[AdminController::class, 'genelayar'])->name('genelayar');
 Route::get('/sosialayar',[AdminController::class, 'sosialayar'])->name('sosialayar');
 Route::get('/iletisimayar',[AdminController::class, 'iletisimayar'])->name('iletisimayar');

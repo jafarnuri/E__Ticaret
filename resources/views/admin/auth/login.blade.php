@@ -33,7 +33,7 @@
               <h6 class="font-weight-light">Sign in to continue.</h6>
 
 
-              <form method="POST" action="{{ route('admin.login') }}" class="pt-3">
+              <form method="POST" action="{{url('admin/login')}}" class="pt-3">
               @csrf
                 <div class="form-group">
                   <input type="email" id="email" name="email" class="form-control form-control-lg"  placeholder="Email">
@@ -51,7 +51,7 @@
 
         <div class="flex items-center justify-end mt-4">
             @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('admin.password.request') }}">
+                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="">
                     {{ __('Forgot your password?') }}
                 </a>
             @endif
@@ -62,9 +62,7 @@
         </div>
 
 
-                <div class="text-center mt-4 font-weight-light">
-                  Don't have an account? <a href="{{ route('admin.register') }}" class="text-primary">{{ __('Register') }}</a>
-                </div>
+
               </form>
 
 

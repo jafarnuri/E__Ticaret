@@ -73,11 +73,11 @@
               <img src="{{asset('/')}}admin/images/faces/face28.jpg" alt="profile"/>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item" href="{{route('admin.profile.edit')}}">
+              <a class="dropdown-item" href="">
                 <i class="ti-settings text-primary"></i>
                 Hesabim
               </a>
-              <a class="dropdown-item" href="">
+              <a class="dropdown-item" href="{{url('/admin/login')}}">
                 <i class="ti-power-off text-primary"></i>
                Logout
               </a>

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Auth;
 
-class UserAdmin
+class Admin
 {
     /**
      * Handle an incoming request.
@@ -16,10 +16,8 @@ class UserAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        
-        if(!Auth::guard('users_admin')->check()){
-            return redirect(route('_girish'));
-
+        if(!Auth::guard('admin')->check()){
+            return redirect('/admin/login');
         }
         return $next($request);
     }

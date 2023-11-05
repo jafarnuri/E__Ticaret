@@ -12,10 +12,33 @@ use App\Models\Kategori;
 use App\Models\Kullanici;
 use App\Models\Mehsullar;
 use App\Models\Sherhler;
-
+use Auth;
 
 class AdminController extends Controller
 {
+    
+    public function dashboard(){
+
+        return view('admin.home');
+    }
+
+    public function login(Request $request){
+if($request->isMethod('post')){
+    $data = $request->all();
+
+    if(Auth::guard('admin')->attempt(['email'=>$data['email'],'password'=>$data['password']])){
+        return redirect("admin/dashboard");
+    }else{
+        return redirect()->back()->with("status","yalnish sifre ve ya email");
+    }
+}
+        return view('admin.auth.login');
+
+    }
+    public function logout(){
+        Auth::guard('admin')->logout();
+        return redirect('admin/login');
+    }
     public function genelayar(){
         $ayarlar=Ayarlar::first();
         return view('admin.genel_ayar')->with('ayarlar',$ayarlar);
