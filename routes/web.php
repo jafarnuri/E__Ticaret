@@ -112,11 +112,8 @@ Route::prefix('/admin')->namespace('App\Http\Controllers')->group(function(){
         Route::post('mehsul_yenile/{id}','AyarController@mehsul_yenile');
         Route::get('mehsulsil/{id}','AyarController@mehsulsil');
 
-
-//ProfilController
-        Route::get('profile_edit','AdminProfilController@edit');
-        Route::post('profile_update','AdminProfilController@update');
-
+        Route::get('admin_edit','AdminController@admin_edit');
+        Route::post('update_password','AdminController@update');
 
 });
 });

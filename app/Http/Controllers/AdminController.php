@@ -13,6 +13,8 @@ use App\Models\Kullanici;
 use App\Models\Mehsullar;
 use App\Models\Sherhler;
 use Auth;
+use Illuminate\View\View;
+use App\Models\Admin;
 
 class AdminController extends Controller
 {
@@ -138,5 +140,29 @@ if($request->isMethod('post')){
     }
 
 
+    public function admin_edit()
+    {
+        // Logic to handle the profile request
+        // For example, fetching user data and displaying the user's profile view
+        
+        // Sample code:
+        $id = Auth::user(); // Get the currently authenticated user
+        $user=Admin::first();
+        return view('admin.update_profile_admin', compact('user'));
+    }
+
+    public function update(Request $request): RedirectResponse
+    {
+        $validated = $request->validateWithBag('updatePassword', [
+            'current_password' => ['required', 'current_password'],
+            'password' => ['required', Password::defaults(), 'confirmed'],
+        ]);
+
+        $request->user()->update([
+            'password' => Hash::make($validated['password']),
+        ]);
+
+        return back()->with('status', 'password-updated');
+    }
 
 }
