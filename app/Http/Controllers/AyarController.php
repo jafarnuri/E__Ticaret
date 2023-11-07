@@ -55,29 +55,7 @@ class AyarController extends Controller
 
  }
 
- public function resimyenile (Request $request)
- {
-         $ayarlar=Ayarlar::first();
-         if($request->hasfile('ayar_resim'))
-         {
-            $deleteOldImage='dimg/resim/'.$ayarlar->ayar_resim;
-            if(File::exists($deleteOldImage))
-           {
-             File::delete($deleteOldImage);
-           }
-           $image=$request->file('ayar_resim');
-           $imagename=time().'_'.uniqid().'.'.$image->getClientOriginalExtension();
-           $image->move('dimg/resim',$imagename);
-           $ayarlar ->ayar_resim = $imagename;
- 
-         }
-         
-         $ayarlar->update();
-         
-       return back()->with("status","Yenilenme ugurla yerine yetirildi");
-    
 
- }
 
  public function sosialyenile( Request $request){
 

@@ -74,36 +74,6 @@
 
                     </form>
 
-
-              
-   <hr>
-
-                       <form action="{{url('/admin/resimyenile')}}" method="POST" enctype="multipart/form-data"  data-parsley-validate class="form-horizontal form-label-left">
-                           @csrf
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Yuklu Resim <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12"> 
-                            <img width="200" src="{{asset('dimg/resim/'.$ayarlar->ayar_resim)}}" alt="">
-                        </div>
-                      </div>
-        
-
-                      <div class="form-group">
-                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name" >Resim Sec <span class="required">*</span></label>
-                      <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input type="file" id="first-name" name="ayar_resim"  class="form-control col-md-7 col-xs-12">
-                      </div>
-
-                        </div>
-
-                        <div align="right" class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <button  type="submit" name="" class="btn btn-primary">Guncelle</button>
-                        </div>
-
-                      
-
-                    </form>
                     
                     <form action="{{url('/admin/genelayaryenile')}}" method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
                          @csrf

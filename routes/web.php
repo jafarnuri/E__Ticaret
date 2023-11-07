@@ -113,7 +113,9 @@ Route::prefix('/admin')->namespace('App\Http\Controllers')->group(function(){
         Route::get('mehsulsil/{id}','AyarController@mehsulsil');
 
         Route::get('admin_edit','AdminController@admin_edit');
-        Route::post('update_password','AdminController@update');
+        Route::post('update_password','AdminController@admin_update_password');
+        Route::post('update_info','AdminController@update_info_admin');
+        Route::post('update_resim','AdminController@admin_resim_update');
 
 });
 });

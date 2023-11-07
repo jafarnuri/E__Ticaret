@@ -45,14 +45,14 @@
                         </div>
                      @endif
 
-                    <form action="" method="POST" enctype="multipart/form-data"  data-parsley-validate class="form-horizontal form-label-left">
+                    <form action="{{url('/admin/update_resim')}}" method="POST" enctype="multipart/form-data"  data-parsley-validate class="form-horizontal form-label-left">
                     @csrf
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Yuklu Resim <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                          
-                         <img width="200"  src="" alt="">
+                         <img width="200"  src="{{asset('dimg/Adminresim/'.$user->resim)}}" alt="">
                         
                         </div>
                       </div>
@@ -61,7 +61,7 @@
                       <div class="form-group">
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name" >Resim Sec <span class="required">*</span></label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input type="file" id="first-name" name="" class="form-control col-md-7 col-xs-12">
+                        <input type="file" id="first-name" name="resim" class="form-control col-md-7 col-xs-12">
                       </div>
 
                         </div>
@@ -80,7 +80,7 @@
 
 
                     
-                    <form action="" method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                    <form action="{{url('/admin/update_info')}}" method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
                          @csrf
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Ad Soyad <span class="required">*</span>
@@ -116,30 +116,35 @@
                     <form action="{{url('admin/update_password')}}" method="POST" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
                          @csrf
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Hal-hazirki Parol<span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="exampleIntEmail1">Hal-hazirki Parol<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="password" id="current_password" name="current_password" 
-                          required="required"  class="form-control col-md-7 col-xs-12">
+                          <input type="password" id="old_password" name="old_password" class="form-control
+                          @error('old_password') is-invalid @enderror" 
+                          autocomplete="off"  class="form-control col-md-7 col-xs-12">
+                          <span class="text-danger"></span>
                    
                         </div>
                       </div>
 
-                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Yeni Parol <span class="required">*</span>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="exampleIntEmail1">Yeni parol<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="password" id="password" name="password"
-                         required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="password" id="new_password" name="new_password" class="form-control
+                          @error('old_password') is-invalid @enderror" 
+                          autocomplete="off"  class="form-control col-md-7 col-xs-12">
+                          <span class="text-danger"></span>
+                   
                         </div>
                       </div>
                      
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Tekrar Parol <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="exampleIntEmail1">Yeni parol<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="password" id="password_confirmation" name="password_confirmation"
-                         required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="password" id="new_password_confirmation" name="new_password_confirmation" 
+                          autocomplete="off"  class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
 

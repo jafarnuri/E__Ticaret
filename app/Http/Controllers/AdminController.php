@@ -15,7 +15,11 @@ use App\Models\Sherhler;
 use Auth;
 use Illuminate\View\View;
 use App\Models\Admin;
-
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Validation\ValidationException;
+use Illuminate\Validation\Rules\Password;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\File;
 class AdminController extends Controller
 {
     
@@ -146,23 +150,79 @@ if($request->isMethod('post')){
         // For example, fetching user data and displaying the user's profile view
         
         // Sample code:
-        $id = Auth::user(); // Get the currently authenticated user
-        $user=Admin::first();
+        $id = Auth::guard('admin')->user()->id; // Get the currently authenticated user
+        $user=Admin::find($id);
         return view('admin.update_profile_admin', compact('user'));
     }
-
-    public function update(Request $request): RedirectResponse
+    public function admin_resim_update (Request $request)
     {
-        $validated = $request->validateWithBag('updatePassword', [
-            'current_password' => ['required', 'current_password'],
-            'password' => ['required', Password::defaults(), 'confirmed'],
-        ]);
-
-        $request->user()->update([
-            'password' => Hash::make($validated['password']),
-        ]);
-
-        return back()->with('status', 'password-updated');
+        $id = Auth::guard('admin')->user()->id;
+        $user=Admin::find($id);
+            if($request->hasfile('resim'))
+            {
+               $deleteOldImage='dimg/Adminresim/'.$user->resim;
+               if(File::exists($deleteOldImage))
+              {
+                File::delete($deleteOldImage);
+              }
+              $image=$request->file('resim');
+              $imagename=time().'_'.uniqid().'.'.$image->getClientOriginalExtension();
+              $image->move('dimg/Adminresim',$imagename);
+              $user ->resim = $imagename;
+    
+            }
+            
+            $user->update();
+            
+          return back()->with('user',$user);
+       
+   
     }
+
+    public function update_info_admin(Request $request)
+    {
+
+        $id = Auth::guard('admin')->user()->id;
+        $user=Admin::find($id);
+        $user->name=$request->input('name');
+        $user->email=$request->input('email');
+        $user->update();
+
+        return back()->with('user',$user);
+    }
+
+
+    public function admin_update_password(Request $request)
+    {
+         $request->validate([
+            'old_password' => 'required', 
+            'new_password' => 'required | confirmed',
+        ]);
+
+        if(!Hash::check($request->old_password, auth::guard('admin')->user()->password )){
+            $status=array(
+                'message'=>'Hazirki parol duzgu deyil',
+                'alert-type'=>'error'
+            );
+            return back()->with($status);
+
+        }
+
+        Admin::whereId(auth::guard('admin')->user()->id)->update([
+            'password'=>Hash::make($request->new_password)
+        ]);
+ 
+        $status=array(
+            'message'=>'Hersey qatdasinda ',
+            'alert-type'=>'success'
+        );
+        return back()->with($status);
+    
+
+
+
+    }
+
+    
 
 }

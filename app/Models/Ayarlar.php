@@ -10,5 +10,5 @@ class Ayarlar extends Model
     use HasFactory;
     protected $table="ayarlar";
     protected $fillabe=["id",
-    "ayar_bashliq","ayar_logo","ayar_resim","ayar_achiqlamas","ayar_kilidsoz","ayar_yazar","created_at","updated_at"];
+    "ayar_bashliq","ayar_logo","ayar_achiqlamas","ayar_kilidsoz","ayar_yazar","created_at","updated_at"];
 }
