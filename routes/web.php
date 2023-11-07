@@ -54,9 +54,11 @@ Route::get('/kategori',[FrontendController::class,'kategori'])->name('kategori')
 Route::get('/about',[FrontendController::class,'about'])->name('about');
 Route::get('/bizimleelaqe',[FrontendController::class,'bizimleelaqe'])->name('bizimleelaqe');
 Route::get('/sebet',[FrontendController::class,'sebet'])->name('sebet');
+Route::get('/kategorilist/{id}',[FrontendController::class,'kategorilist'])->name('kategorilist');
 
 
 //AdminController
+Route::get('/parol_unutum',[AdminController::class,'parol_unutum_admin'])->name('parol_unutum');
 Route::prefix('/admin')->namespace('App\Http\Controllers')->group(function(){
     Route::match(['get','post'],'login','AdminController@login');
     
@@ -116,6 +118,7 @@ Route::prefix('/admin')->namespace('App\Http\Controllers')->group(function(){
         Route::post('update_password','AdminController@admin_update_password');
         Route::post('update_info','AdminController@update_info_admin');
         Route::post('update_resim','AdminController@admin_resim_update');
+        
 
 });
 });

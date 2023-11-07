@@ -30,7 +30,7 @@
           
 
                  <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Ürün Ad <span class="required">*</span>
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Mehsul Ad <span class="required">*</span>
                   </label>
                   <div class="col-md-6 col-sm-6 col-xs-12">
                     <input type="text" id="first-name" name="mehsul_ad" 
@@ -39,7 +39,7 @@
                 </div>
 
                 <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Ürün Model <span class="required">*</span>
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Mehsul Model <span class="required">*</span>
                   </label>
                   <div class="col-md-6 col-sm-6 col-xs-12">
                     <input type="text" id="first-name" name="mehsul_model" 
@@ -67,7 +67,7 @@
               <!-- Ck Editör Bitiş -->
 
               <div class="form-group">
-                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Ürün Endirim Fiyat 
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Mehsul Endirim Qiymet 
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
                   <input type="text" id="first-name" name="mehsul_endirimqiymet" 
@@ -76,7 +76,7 @@
               </div>
 
               <div class="form-group">
-                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Ürün Fiyat <span class="required">*</span>
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Mehsul Qiymet <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
                   <input type="text" id="first-name" name="mehsul_qiymet" 
@@ -84,12 +84,19 @@
                 </div>
               </div>
 
-
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Mehsul Size <span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" id="first-name" name="mehsul_size" 
+                  value="{{$mehsullar->mehsul_size}}" required="required" class="form-control col-md-7 col-xs-12">
+                </div>
+              </div>
 
        
 
               <div class="form-group">
-                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Ürün Stok <span class="required">*</span>
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Mehsul Stok <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
                   <input type="text" id="first-name" name="mehsul_say" 
@@ -100,7 +107,7 @@
 
 
               <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Ürün Resim<span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Mehsul Resim<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                          

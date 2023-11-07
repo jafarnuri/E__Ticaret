@@ -1,4 +1,8 @@
-    <header class="site-navbar" role="banner">
+<?php
+use App\Models\Kategori;
+$kategori=Kategori::get();
+?>
+<header class="site-navbar" role="banner">
       <div class="site-navbar-top">
         <div class="container">
           <div class="row align-items-center">
@@ -57,17 +61,9 @@
               <a href="{{route('kategori')}}">Kateqori</a>
               
               <ul class="dropdown">
-                <li><a href="#">Usaq paltarlari</a></li>
-                <li><a href="#">Qadin paltarlari</a></li>
-                <li><a href="#">Kisi paltarlari</a></li>
-                <li class="has-children">
-                  <a href="#">Ayaqqabilar</a>
-                  <ul class="dropdown">
-                    <li><a href="#">Usaq ayaqqabilari</a></li>
-                    <li><a href="#">Qadin ayaqqabilari</a></li>
-                    <li><a href="#">Kisi ayaqqabilari</a></li>
-                  </ul>
-                </li>
+              @foreach($kategori as $katecek)
+                <li><a href="{{url('/kategorilist/'.$katecek->id)}}">{{$katecek->kategoriya_ad}}</a></li>
+              @endforeach
               </ul>
             </li>
             <li><a href="{{route('about')}}">Haqqimizda</a></li>

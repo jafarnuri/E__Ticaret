@@ -10,6 +10,6 @@ class Mehsullar extends Model
     use HasFactory;
     protected $table="mehsullar";
     protected $fillabe=["id",
-    "kategoriad","mehsul_ad","mehsul_model","mehsul_resm","mehsul_endirimqiymet",
+    "kategoriad","mehsul_ad","mehsul_model","mehsul_resm","mehsul_endirimqiymet","mehsul_size",
     "mehsul_qiymet","mehsul_say","created_at","updated_at"];
 }

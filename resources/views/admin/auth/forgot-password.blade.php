@@ -33,7 +33,7 @@
               <h6 class="font-weight-light">Email hesabinizi girin.</h6>
 
 
-              <form method="POST" action="{{ route('admin.password.email') }}" class="pt-3">
+              <form method="POST" action="{{ route('password.email') }}" class="pt-3">
               @csrf
                 <div class="form-group">
                   <input type="email" id="email" name="email" class="form-control form-control-lg"  placeholder="Email">

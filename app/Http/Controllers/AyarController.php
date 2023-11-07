@@ -205,6 +205,7 @@ if($image=$request->file('mehsul_resm')){
     $mehsul->kategoriad=$request->input('kategoriad');
     $mehsul->mehsul_ad=$request->input('mehsul_ad');
     $mehsul->mehsul_model=$request->input('mehsul_model');
+    $mehsul->mehsul_size=$request->input('mehsul_size');
     $mehsul->mehsul_resm=$imagename;
     $mehsul->mehsul_endirimqiymet=$request->input('mehsul_endirimqiymet');
     $mehsul->mehsul_qiymet=$request->input('mehsul_qiymet');
@@ -221,6 +222,7 @@ public function mehsul_yenile($id ,Request $request)
     $mehsul->kategoriad=$request->input('kategoriad');
     $mehsul->mehsul_ad=$request->input('mehsul_ad');
     $mehsul->mehsul_model=$request->input('mehsul_model');
+    $mehsul->mehsul_size=$request->input('mehsul_size');
     $mehsul->mehsul_endirimqiymet=$request->input('mehsul_endirimqiymet');
     $mehsul->mehsul_qiymet=$request->input('mehsul_qiymet');
     $mehsul->mehsul_say=$request->input('mehsul_say');
