@@ -9,8 +9,11 @@ use App\Models\Kategori;
 class FrontendController extends Controller
 {
     public function kategori (){
+        $kategori=Kategori::get();
+        $mehsul=Mehsullar::get();
+
       
-        return view ('frond.shop');
+        return view ('frond.shop')->with('kategori',$kategori)->with('mehsul',$mehsul);
 
     }
     public function qeydiyyat(){
