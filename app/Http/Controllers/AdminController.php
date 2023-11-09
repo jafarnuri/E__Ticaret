@@ -12,6 +12,7 @@ use App\Models\Kategori;
 use App\Models\Kullanici;
 use App\Models\Mehsullar;
 use App\Models\Sherhler;
+
 use Auth;
 use Illuminate\View\View;
 use App\Models\Admin;
@@ -68,6 +69,11 @@ if($request->isMethod('post')){
         return view('admin.haqqimizda')->with('haqqimizda',$haqqimizda);
 
     }
+
+
+
+
+
     public function kategori(){
         $kategori=Kategori::get();
         return view('admin.kategoriyalar')->with('kategori',$kategori);
@@ -122,8 +128,9 @@ if($request->isMethod('post')){
 
     public function mehsulyukle(){
         $kategori=Kategori::get();
-        
-        return view('admin.mehsul_yukle')->with('kategori',$kategori);
+        $reng=Rengler::get();
+        $size=Size::get();
+        return view('admin.mehsul_yukle')->with('kategori',$kategori)->with('reng',$reng)->with('size',$size);
 
     }
 

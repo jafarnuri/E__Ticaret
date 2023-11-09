@@ -40,12 +40,16 @@
               <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
                 <div class="block-4 text-center border">
                   <figure class="block-4-image">
-                    <a href="shop-single.html"><img src="{{asset('dimg/mehsullar/'.$mehsulcek->mehsul_resm)}}" alt="Image placeholder" class="img-fluid"></a>
+                    <a href=""><img src="{{asset('dimg/mehsullar/'.$mehsulcek->mehsul_resm)}}" alt="Image placeholder" class="img-fluid"></a>
                   </figure>
                   <div class="block-4-text p-4">
-                    <h3><a href="shop-single.html">{{$mehsulcek->mehsul_ad}}</a></h3>
+                    <h3><a href="">{{$mehsulcek->mehsul_ad}}</a></h3>
                     <p class="mb-0">{{$mehsulcek->mehsul_model}}</p>
-                    <p class="text-primary font-weight-bold">{{$mehsulcek->mehsul_qiymet}}</p>
+                    <p class="text-primary font-weight-bold" class="product-old-price">{{$mehsulcek->mehsul_qiymet}}</p>
+                 @if(($mehsulcek->mehsul_endirimqiymet) > 0) 
+                   <span class="text-danger font-weight-bold"><del class="product-old-price">${{$mehsulcek->mehsul_endirimqiymet}}</del></span>
+                   @endif
+                    
                   </div>
                 </div>
               </div>
@@ -92,27 +96,18 @@
             </div>
 
             <div class="border p-4 rounded mb-4">
-              <div class="mb-4">
-                <h3 class="mb-3 h6 text-uppercase text-black d-block">Filter by Price</h3>
-                <div id="slider-range" class="border-primary"></div>
-                <input type="text" name="text" id="amount" class="form-control border-0 pl-0 bg-white" disabled="" />
-              </div>
+
 
               <div class="mb-4">
                 <h3 class="mb-3 h6 text-uppercase text-black d-block">Size</h3>
-                <label for="s_sm" class="d-flex">
-                  <input type="checkbox" id="s_sm" class="mr-2 mt-1"> <span class="text-black">Small (2,319)</span>
-                </label>
-                <label for="s_md" class="d-flex">
-                  <input type="checkbox" id="s_md" class="mr-2 mt-1"> <span class="text-black">Medium (1,282)</span>
-                </label>
-                <label for="s_lg" class="d-flex">
-                  <input type="checkbox" id="s_lg" class="mr-2 mt-1"> <span class="text-black">Large (1,392)</span>
-                </label>
+                <li class="mb-1"><a  href=""><span>Small</span><span class="text-black ml-auto">(2,220)</span></a></li>
+                <li class="mb-1"><a  href=""><span>Medium</span><span class="text-black ml-auto">(2,220)</span></a></li>
+                <li class="mb-1"><a  href=""><span>Large </span><span class="text-black ml-auto">(2,220)</span></a></li>
+               
               </div>
 
               <div class="mb-4">
-                <h3 class="mb-3 h6 text-uppercase text-black d-block">Color</h3>
+                <h3 class="mb-3 h6 text-uppercase text-black d-block">Rengler</h3>
                 <a href="#" class="d-flex color-item align-items-center" >
                   <span class="bg-danger color d-inline-block rounded-circle mr-2"></span> <span class="text-black">Red (2,429)</span>
                 </a>

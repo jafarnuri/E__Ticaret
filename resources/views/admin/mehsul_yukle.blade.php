@@ -32,7 +32,7 @@
 
 
               <div class="form-group">
-                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Ürün Ad <span class="required">*</span>
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Mehsul Ad <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
                   <input type="text" id="first-name" name="mehsul_ad" placeholder="Ürün adnizi girin"  class="form-control col-md-7 col-xs-12">
@@ -40,7 +40,7 @@
               </div>
 
               <div class="form-group">
-                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Ürün Model <span class="required">*</span>
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Mehsul Model <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
                   <input type="text" id="first-name" name="mehsul_model" placeholder="Ürün modelin girin"  class="form-control col-md-7 col-xs-12">
@@ -48,7 +48,57 @@
               </div>
 
 
+                <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Mehsul Endirim Fiyat 
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" id="first-name" name="mehsul_endirimqiymet" placeholder="Ürün fiyat giriniz"  class="form-control col-md-7 col-xs-12">
+                </div>
+              </div>
 
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Mehsul Endirim Tarix
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" id="first-name" name="mehsul_endirim_tarix" placeholder="Ürün fiyat giriniz"  class="form-control col-md-7 col-xs-12">
+                </div>
+              </div>
+
+
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Mehsul Fiyat <span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" id="first-name" name="mehsul_qiymet" required="required"  placeholder="Ürün fiyat giriniz"  class="form-control col-md-7 col-xs-12">
+                </div>
+              </div>
+
+              
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Mehsul Stok <span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" id="first-name" name="mehsul_say" placeholder="Ürün stok giriniz" required="required" class="form-control col-md-7 col-xs-12">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Mehsul Olcu<span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" id="first-name" name="mehsul_olcu" placeholder="Ürün stok giriniz" required="required" class="form-control col-md-7 col-xs-12">
+                </div>
+              </div>
+
+              <div class="form-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Mehsul Detay <span class="required">*</span>
+                  </label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+
+                    <textarea  class="text" id="first-name" name="mehsul_melumat"></textarea>
+                  </div>
+                </div>
+ 
 
               <div class="form-group">
               <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Kategori Seç<span class="required">*</span>
@@ -62,58 +112,36 @@
                      </select>
                    </div>
                  </div>
+                 <div class="form-group">
+              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Size Seç<span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                
+                    <select class="select2_multiple form-control" required="" name="mehsul_size" >
+              
+                       <option >Balaca</option>
+                       <option >Orta</option>
+                       <option >Boyuk </option>
+     
+                     </select>
+                   </div>
+                 </div>
 
                  <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Ürün Detay <span class="required">*</span>
-                  </label>
-                  <div class="col-md-6 col-sm-6 col-xs-12">
-
-                    <textarea  class="text" id="first-name" name="mehsul_melumat"></textarea>
-                  </div>
-                </div>
- 
-
-                <div class="form-group">
-                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Ürün Endirim Fiyat 
+              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Reng Seç<span class="required">*</span>
                 </label>
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input type="text" id="first-name" name="mehsul_endirimqiymet" placeholder="Ürün fiyat giriniz"  class="form-control col-md-7 col-xs-12">
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Ürün Endirim Tarix
-                </label>
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input type="text" id="first-name" name="mehsul_endirim_tarix" placeholder="Ürün fiyat giriniz"  class="form-control col-md-7 col-xs-12">
-                </div>
-              </div>
-
-
-              <div class="form-group">
-                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Ürün Fiyat <span class="required">*</span>
-                </label>
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input type="text" id="first-name" name="mehsul_qiymet" required="required"  placeholder="Ürün fiyat giriniz"  class="form-control col-md-7 col-xs-12">
-                </div>
-              </div>
-
-
-              <div class="form-group">
-                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Size<span class="required">*</span>
-                </label>
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input type="text" id="first-name" name="mehsul_size" placeholder="Ürün stok giriniz" required="required" class="form-control col-md-7 col-xs-12">
-                </div>
-              </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                
+                    <select class="select2_multiple form-control" required="" name="mehsul_reng" >
               
-              <div class="form-group">
-                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Ürün Stok <span class="required">*</span>
-                </label>
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input type="text" id="first-name" name="mehsul_say" placeholder="Ürün stok giriniz" required="required" class="form-control col-md-7 col-xs-12">
-                </div>
-              </div>
+                       <option >Qirmizi</option>
+                       <option >Yasil</option>
+                       <option >Mavi </option>
+                       <option >Benovseyi </option>
+     
+                     </select>
+                   </div>
+                 </div>
 
               <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Ürün Foto <span class="required">*</span>

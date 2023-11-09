@@ -49,30 +49,10 @@
 
 
 
-                <div class="form-group">
-              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Kategori Seç<span class="required">*</span>
-                </label>
-                <div class="col-md-6 col-sm-6 col-xs-6">
-                
-                    <select class="select2_multiple form-control" required="" name="kategoriad" >
-                  @foreach($kategori as $katcek)
-                       <option  value="{{$mehsullar->kategoriad}}">{{$katcek->kategoriya_ad}}</option>
-                      @endforeach
-                     </select>
-                   </div>
-                 </div>
-
 
 
               <!-- Ck Editör Bitiş -->
-              <div class="form-group">
-                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Ürün Detay <span class="required">*</span>
-                  </label>
-                  <div class="col-md-6 col-sm-6 col-xs-12">
 
-                    <textarea  class="text" id="first-name" value="{{$mehsullar->mehsul_endirimTarix}}" name="mehsul_melumat"></textarea>
-                  </div>
-                </div>
 
 
               <div class="form-group">
@@ -85,7 +65,7 @@
               </div>
 
               <div class="form-group">
-                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Ürün Endirim Tarix
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Mehsul Endirim Tarix
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
                   <input type="text" id="first-name" value="{{$mehsullar->mehsul_endirimTarix}}" name="mehsul_endirimTarix" placeholder="Ürün fiyat giriniz"  class="form-control col-md-7 col-xs-12">
@@ -101,14 +81,6 @@
                 </div>
               </div>
 
-              <div class="form-group">
-                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Mehsul Size <span class="required">*</span>
-                </label>
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input type="text" id="first-name" name="mehsul_size" 
-                  value="{{$mehsullar->mehsul_size}}" required="required" class="form-control col-md-7 col-xs-12">
-                </div>
-              </div>
 
        
 
@@ -121,9 +93,68 @@
                 </div>
               </div>
 
-
-
               <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Mehsul Olcu<span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input value="{{$mehsullar->mehsul_olcu}}" type="text" id="first-name" name="mehsul_olcu" placeholder="Ürün stok giriniz" required="required" class="form-control col-md-7 col-xs-12">
+                </div>
+              </div>
+
+  
+
+                        <div class="form-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Mehsul Detay <span class="required">*</span>
+                  </label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+
+                    <textarea  class="text" id="first-name" value="{{$mehsullar->mehsul_endirimTarix}}" name="mehsul_melumat"></textarea>
+                  </div>
+                </div>  
+                <div class="form-group">
+              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Kategori Seç<span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                
+                    <select class="select2_multiple form-control" required="" name="kategoriad" >
+                  @foreach($kategori as $katcek)
+                       <option  value="{{$mehsullar->kategoriad}}">{{$katcek->kategoriya_ad}}</option>
+                      @endforeach
+                     </select>
+                   </div>
+                 </div>
+
+                 <div class="form-group">
+              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Size Seç<span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                
+                    <select class="select2_multiple form-control" required="" name="mehsul_size" >
+              
+                       <option >Balaca</option>
+                       <option >Orta</option>
+                       <option >Boyuk </option>
+     
+                     </select>
+                   </div>
+                 </div>
+
+                 <div class="form-group">
+              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Reng Seç<span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                
+                    <select class="select2_multiple form-control" required="" name="mehsul_reng" >
+              
+                       <option >Qirmizi</option>
+                       <option >Yasil</option>
+                       <option >Mavi </option>
+                       <option >Benovseyi </option>
+     
+                     </select>
+                   </div>
+                 </div>
+                 <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Mehsul Resim<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
@@ -141,8 +172,6 @@
                       </div>
 
                         </div>
-
-
              <div class="ln_solid"></div>
              <div class="form-group">
               <div align="right" class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">

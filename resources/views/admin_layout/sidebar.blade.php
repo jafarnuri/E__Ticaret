@@ -50,6 +50,7 @@
               <span class="menu-title">Kateqoriyalar</span>
             </a>
           </li>
+
           <li class="nav-item">
             <a class="nav-link" href="{{url('/admin/banklar')}}">
               <i class="icon-paper menu-icon"></i>

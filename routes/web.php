@@ -84,6 +84,7 @@ Route::prefix('/admin')->namespace('App\Http\Controllers')->group(function(){
         Route::get('haqqimizda','AdminController@haqqimizda');
 
 
+
 //AyarController
         Route::post('logoyenile','AyarController@logoyenile');
         Route::post('resimyenile','AyarController@resimyenile');
@@ -118,6 +119,8 @@ Route::prefix('/admin')->namespace('App\Http\Controllers')->group(function(){
         Route::post('update_password','AdminController@admin_update_password');
         Route::post('update_info','AdminController@update_info_admin');
         Route::post('update_resim','AdminController@admin_resim_update');
+
+
         
 
 });

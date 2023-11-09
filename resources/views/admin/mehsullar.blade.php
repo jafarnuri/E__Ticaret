@@ -34,23 +34,21 @@
               <thead>
                 <tr>
                   <th>S.No</th>
-                  <th>Ürün Ad</th>
-                  <th>Ürün Model</th>
+                  <th>Mehsul Ad</th>
+                  <th>Mehsul Model</th>
                   <th>Kategori ismi</th>
-                  <th>Ürün Stok</th>
-                  <th>Ürün Fiyat</th>
-                  <th>Ürün Endirim Fiyati</th>
-                  <th>Ürün Endirim Tarixi</th>
-                  <th>Ürün Umumu Melumat</th>
+                  <th>Mehsul Stok</th>
+                  <th>Mehsul Fiyat</th>
+                  <th>Mehsul Endirim Fiyati</th>
+                  <th>Mehsul Endirim Tarixi</th>
+                  <th>Mehsul Umumu Melumat</th>
                   <th>Foto</th>
                   <th>Yenile</th>
                   <th>Sil</th>
                   
                 </tr>
               </thead>
-              @isset($mehsulcek->mehsul_endirimqiymet)
-              {{$mehsulcek->mehsul_endirimqiymet}}
-@endisset
+
               <tbody>
           @foreach($mehsullar as $mehsulcek)
                 <tr>
@@ -60,10 +58,8 @@
                  <td>{{$mehsulcek->kategoriad}}</td>
                  <td>{{$mehsulcek->mehsul_say}}</td>
                  <td>{{$mehsulcek->mehsul_qiymet}}</td>
-                 <td>              @isset($mehsulcek->mehsul_endirimqiymet)
-              {{$mehsulcek->mehsul_endirimqiymet}}
-@endisset</td>
                  <td>{{$mehsulcek->mehsul_endirimqiymet}}</td>
+                 <td>{{$mehsulcek->mehsul_endirim_tarix}}</td>
                  <td>{{$mehsulcek->mehsul_melumat}}</td>
                  <td><img  src="{{asset('dimg/mehsullar/'.$mehsulcek->mehsul_resm)}}" alt=""></td>
                  <td><center><a href="{{url('/admin/mehsulduzenle/'.$mehsulcek->id)}}"><button class="btn btn-primary btn-xs"><i class="fa fa-rotate-right"></i></button></a></center></td>

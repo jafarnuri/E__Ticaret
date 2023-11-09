@@ -6,11 +6,14 @@ use Illuminate\Http\Request;
 use App\Models\Mehsullar;
 use App\Models\Kategori;
 
+
+
 class FrontendController extends Controller
 {
     public function kategori (){
         $kategori=Kategori::get();
         $mehsul=Mehsullar::get();
+
 
       
         return view ('frond.shop')->with('kategori',$kategori)->with('mehsul',$mehsul);
@@ -38,8 +41,10 @@ class FrontendController extends Controller
        $kategori=Kategori::find($id);
        $mehsul=Mehsullar::where("kategoriad", '=', $kategori->kategoriya_ad)->get();
        $kategoriya=Kategori::get();
+
        
-     return view ('frond.kategorilist')->with('mehsul',$mehsul)->with('kategori' , $kategori)->with('kategoriya' , $kategoriya);
+     return view ('frond.kategorilist')->with('mehsul',$mehsul)->with('kategori' , $kategori)
+     ->with('kategoriya' , $kategoriya);
  
     }
 }
