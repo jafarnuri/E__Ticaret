@@ -36,9 +36,10 @@ class FrontendController extends Controller
     public function kategorilist($id)
     {
        $kategori=Kategori::find($id);
-       $mehsul=Mehsullar::where("kategoriad", '=', $kategori->kategori_ad)->get();
+       $mehsul=Mehsullar::where("kategoriad", '=', $kategori->kategoriya_ad)->get();
+       $kategoriya=Kategori::get();
        
-     return view ('frond.kategorilist')->with('mehsul',$mehsul)->with('kategori' , $kategori);
+     return view ('frond.kategorilist')->with('mehsul',$mehsul)->with('kategori' , $kategori)->with('kategoriya' , $kategoriya);
  
     }
 }

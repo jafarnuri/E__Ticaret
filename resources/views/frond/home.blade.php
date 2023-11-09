@@ -174,7 +174,7 @@
       <div class="container">
         <div class="row justify-content-center  mb-5">
           <div class="col-md-7 site-section-heading text-center pt-4">
-            <h2>Big Sale!</h2>
+            <h2>Boyuk Endirim!</h2>
           </div>
         </div>
         <div class="row align-items-center">
@@ -182,10 +182,10 @@
             <a href="#"><img src="{{asset('/')}}frondend/images/blog_1.jpg" alt="Image placeholder" class="img-fluid rounded"></a>
           </div>
           <div class="col-md-12 col-lg-5 text-center pl-md-5">
-            <h2><a href="#">50% less in all items</a></h2>
-            <p class="post-meta mb-4">By <a href="#">Carl Smith</a> <span class="block-8-sep">&bullet;</span> September 3, 2018</p>
+            <h2><a href="#">50% dek endirim</a></h2>
+            <p class="post-meta mb-4">September 3, 2018</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam iste dolor accusantium facere corporis ipsum animi deleniti fugiat. Ex, veniam?</p>
-            <p><a href="#" class="btn btn-primary btn-sm">Shop Now</a></p>
+            <p><a href="#" class="btn btn-primary btn-sm">Indi Alis-Veris Edin</a></p>
           </div>
         </div>
       </div>

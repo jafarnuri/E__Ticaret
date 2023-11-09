@@ -65,6 +65,15 @@
 
 
               <!-- Ck Editör Bitiş -->
+              <div class="form-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Ürün Detay <span class="required">*</span>
+                  </label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+
+                    <textarea  class="text" id="first-name" value="{{$mehsullar->mehsul_endirimTarix}}" name="mehsul_melumat"></textarea>
+                  </div>
+                </div>
+
 
               <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Mehsul Endirim Qiymet 
@@ -72,6 +81,14 @@
                 <div class="col-md-6 col-sm-6 col-xs-12">
                   <input type="text" id="first-name" name="mehsul_endirimqiymet" 
                   value="{{$mehsullar->mehsul_endirimqiymet}}"  class="form-control col-md-7 col-xs-12">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Ürün Endirim Tarix
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" id="first-name" value="{{$mehsullar->mehsul_endirimTarix}}" name="mehsul_endirimTarix" placeholder="Ürün fiyat giriniz"  class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
 

@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('mehsullar', function (Blueprint $table) {
-            $table->id('id');
+        Schema::create('mehsullars', function (Blueprint $table) {
+            $table->id();
             $table->string('kategoriad');
             $table->string('mehsul_ad');
+            $table->string('mehsul_endirimTarix')->nullable;
             $table->string('mehsul_model');
             $table->string('mehsul_resm');
             $table->text('mehsul_melumat');
@@ -23,6 +24,7 @@ return new class extends Migration
             $table->string('mehsul_video');
             $table->string('mehsul_kilidsoz');
             $table->integer('mehsul_say');
+            $table->integer('mehsul_size');
             $table->timestamps();
         });
     }
@@ -32,6 +34,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('mehsullar');
+        Schema::dropIfExists('mehsullars');
     }
 };

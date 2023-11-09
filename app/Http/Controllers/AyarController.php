@@ -204,8 +204,11 @@ if($image=$request->file('mehsul_resm')){
     $mehsul= new Mehsullar();
     $mehsul->kategoriad=$request->input('kategoriad');
     $mehsul->mehsul_ad=$request->input('mehsul_ad');
+    $mehsul->mehsul_melumat=$request->input('mehsul_melumat');
+    $mehsul->mehsul_endirim_tarix=$request->input('mehsul_endirim_tarix');
     $mehsul->mehsul_model=$request->input('mehsul_model');
     $mehsul->mehsul_size=$request->input('mehsul_size');
+  
     $mehsul->mehsul_resm=$imagename;
     $mehsul->mehsul_endirimqiymet=$request->input('mehsul_endirimqiymet');
     $mehsul->mehsul_qiymet=$request->input('mehsul_qiymet');
@@ -221,11 +224,13 @@ public function mehsul_yenile($id ,Request $request)
     $mehsul= Mehsullar::find($id);
     $mehsul->kategoriad=$request->input('kategoriad');
     $mehsul->mehsul_ad=$request->input('mehsul_ad');
+    $mehsul->mehsul_melumat=$request->input('mehsul_melumat');
+    $mehsul->mehsul_endirim_tarix=$request->input('mehsul_endirim_tarix');
     $mehsul->mehsul_model=$request->input('mehsul_model');
     $mehsul->mehsul_size=$request->input('mehsul_size');
     $mehsul->mehsul_endirimqiymet=$request->input('mehsul_endirimqiymet');
     $mehsul->mehsul_qiymet=$request->input('mehsul_qiymet');
-    $mehsul->mehsul_say=$request->input('mehsul_say');
+    
     if($request->hasfile('mehsul_resm'))
     {
        $deleteOldImage='dimg/mehsullar/'.$mehsul->mehsul_resm;

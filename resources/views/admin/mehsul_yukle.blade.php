@@ -63,6 +63,14 @@
                    </div>
                  </div>
 
+                 <div class="form-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Ürün Detay <span class="required">*</span>
+                  </label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+
+                    <textarea  class="text" id="first-name" name="mehsul_melumat"></textarea>
+                  </div>
+                </div>
  
 
                 <div class="form-group">
@@ -73,12 +81,20 @@
                 </div>
               </div>
 
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Ürün Endirim Tarix
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" id="first-name" name="mehsul_endirim_tarix" placeholder="Ürün fiyat giriniz"  class="form-control col-md-7 col-xs-12">
+                </div>
+              </div>
+
 
               <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Ürün Fiyat <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input type="text" id="first-name" name="mehsul_qiymet" placeholder="Ürün fiyat giriniz"  class="form-control col-md-7 col-xs-12">
+                  <input type="text" id="first-name" name="mehsul_qiymet" required="required"  placeholder="Ürün fiyat giriniz"  class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
 
