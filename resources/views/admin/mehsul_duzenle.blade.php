@@ -124,20 +124,7 @@
                    </div>
                  </div>
 
-                 <div class="form-group">
-              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Size Seç<span class="required">*</span>
-                </label>
-                <div class="col-md-6 col-sm-6 col-xs-6">
-                
-                    <select class="select2_multiple form-control" required="" name="mehsul_size" >
-              
-                       <option >Balaca</option>
-                       <option >Orta</option>
-                       <option >Boyuk </option>
-     
-                     </select>
-                   </div>
-                 </div>
+
 
                  <div class="form-group">
               <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Reng Seç<span class="required">*</span>
@@ -145,12 +132,23 @@
                 <div class="col-md-6 col-sm-6 col-xs-6">
                 
                     <select class="select2_multiple form-control" required="" name="mehsul_reng" >
-              
-                       <option >Qirmizi</option>
-                       <option >Yasil</option>
-                       <option >Mavi </option>
-                       <option >Benovseyi </option>
-     
+                  @foreach($reng as $rengcek)
+                       <option  value="{{$mehsullar->mehsul_reng}}">{{$rengcek->reng_ad}}</option>
+                      @endforeach
+                     </select>
+                   </div>
+                 </div>
+
+
+                <div class="form-group">
+              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Size Seç<span class="required">*</span>
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                
+                    <select class="select2_multiple form-control" required="" name="mehsul_size" >
+                  @foreach($size as $sizecek)
+                       <option  value="{{$mehsullar->mehsul_size}}">{{$sizecek->size_ad}}</option>
+                      @endforeach
                      </select>
                    </div>
                  </div>

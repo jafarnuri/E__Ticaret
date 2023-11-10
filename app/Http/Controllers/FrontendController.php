@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Mehsullar;
 use App\Models\Kategori;
-
+use App\Models\Rengler;
+use App\Models\Size;
 
 
 class FrontendController extends Controller
@@ -13,11 +14,14 @@ class FrontendController extends Controller
     public function kategori (){
         $kategori=Kategori::get();
         $mehsul=Mehsullar::get();
+        $reng=Rengler::get();
+        $size=Size::get();
 
+        return view ('frond.shop')->with('kategori',$kategori)->with('mehsul',$mehsul)->with('reng',$reng)->with('size',$size);
 
-      
-        return view ('frond.shop')->with('kategori',$kategori)->with('mehsul',$mehsul);
-
+    }
+    public function urundetay(){
+        return view('frond.shop-single');
     }
     public function qeydiyyat(){
         return view('frond.qeydiyyat');
@@ -41,10 +45,37 @@ class FrontendController extends Controller
        $kategori=Kategori::find($id);
        $mehsul=Mehsullar::where("kategoriad", '=', $kategori->kategoriya_ad)->get();
        $kategoriya=Kategori::get();
+       $reng=Rengler::get();
+       $size=Size::get();
 
        
      return view ('frond.kategorilist')->with('mehsul',$mehsul)->with('kategori' , $kategori)
-     ->with('kategoriya' , $kategoriya);
+     ->with('kategoriya' , $kategoriya) ->with('size' , $size) ->with('reng' , $reng);
+    }
+
+    public function renglist($id)
+    {
+        $rengler=Rengler::find($id);
+        $mehsul=Mehsullar::where("mehsul_reng", '=', $rengler->reng_ad)->get();
+        $kategori=Kategori::get();
+        $reng=Rengler::get();
+        $size=Size::get();
+
+     return view ('frond.renglist')->with('mehsul',$mehsul)->with('kategori' , $kategori)->with('rengler' , $rengler)
+     ->with('reng' , $reng)->with('size' , $size);
+ 
+    }
+
+    public function sizelist($id)
+    {
+        $sizes=Size::find($id);
+        $mehsul=Mehsullar::where("mehsul_size", '=', $sizes->size_ad)->get();
+        $kategori=Kategori::get();
+        $reng=Rengler::get();
+        $size=Size::get();
+
+     return view ('frond.sizelist')->with('mehsul',$mehsul)->with('kategori' , $kategori)->with('sizes' , $sizes)
+     ->with('reng' , $reng)->with('size' , $size);
  
     }
 }

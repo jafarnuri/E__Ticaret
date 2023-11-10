@@ -40,11 +40,11 @@
               <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
                 <div class="block-4 text-center border">
                   <figure class="block-4-image">
-                    <a href=""><img src="{{asset('dimg/mehsullar/'.$mehsulcek->mehsul_resm)}}" alt="Image placeholder" class="img-fluid"></a>
+                    <a href="{{url('/urundetay/')}}"><img src="{{asset('dimg/mehsullar/'.$mehsulcek->mehsul_resm)}}" alt="Image placeholder" class="img-fluid"></a>
                   </figure>
                   <div class="block-4-text p-4">
                     <h3><a href="">{{$mehsulcek->mehsul_ad}}</a></h3>
-                    <p class="mb-0">{{$mehsulcek->mehsul_model}}</p>
+                   
                     <p class="text-primary font-weight-bold" class="product-old-price">{{$mehsulcek->mehsul_qiymet}}</p>
                  @if(($mehsulcek->mehsul_endirimqiymet) > 0) 
                    <span class="text-danger font-weight-bold"><del class="product-old-price">${{$mehsulcek->mehsul_endirimqiymet}}</del></span>
@@ -100,26 +100,18 @@
 
               <div class="mb-4">
                 <h3 class="mb-3 h6 text-uppercase text-black d-block">Size</h3>
-                <li class="mb-1"><a  href=""><span>Small</span><span class="text-black ml-auto">(2,220)</span></a></li>
-                <li class="mb-1"><a  href=""><span>Medium</span><span class="text-black ml-auto">(2,220)</span></a></li>
-                <li class="mb-1"><a  href=""><span>Large </span><span class="text-black ml-auto">(2,220)</span></a></li>
+                @foreach($size as $sizecek)
+                <li class="mb-1"><a  href="{{url('/sizelist/'.$sizecek->id)}}"><span>{{$sizecek->size_ad}}</span><span class="text-black ml-auto">(2,220)</span></a></li>
                
+                @endforeach
               </div>
 
               <div class="mb-4">
                 <h3 class="mb-3 h6 text-uppercase text-black d-block">Rengler</h3>
-                <a href="#" class="d-flex color-item align-items-center" >
-                  <span class="bg-danger color d-inline-block rounded-circle mr-2"></span> <span class="text-black">Red (2,429)</span>
-                </a>
-                <a href="#" class="d-flex color-item align-items-center" >
-                  <span class="bg-success color d-inline-block rounded-circle mr-2"></span> <span class="text-black">Green (2,298)</span>
-                </a>
-                <a href="#" class="d-flex color-item align-items-center" >
-                  <span class="bg-info color d-inline-block rounded-circle mr-2"></span> <span class="text-black">Blue (1,075)</span>
-                </a>
-                <a href="#" class="d-flex color-item align-items-center" >
-                  <span class="bg-primary color d-inline-block rounded-circle mr-2"></span> <span class="text-black">Purple (1,075)</span>
-                </a>
+                @foreach($reng as $rengcek)
+                <li class="mb-1"><a  href="{{url('/renglist/'.$rengcek->id)}}"><span>{{$rengcek->reng_ad}}</span><span class="text-black ml-auto">(2,220)</span></a></li>
+               
+                @endforeach
               </div>
 
             </div>

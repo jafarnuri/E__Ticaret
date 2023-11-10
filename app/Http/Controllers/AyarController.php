@@ -10,7 +10,8 @@ use App\Models\Haqqimizda;
 use App\Models\Kategori;
 use App\Models\Bank;
 use App\Models\Mehsullar;
-
+use App\Models\Rengler;
+use App\Models\Size;
 
 use Illuminate\Support\Facades\File;
 
@@ -130,7 +131,69 @@ public function haqqimizdalogo(Request $request)
 }
 
 
+public function rengelaveet(Request $request)
+{ 
+    $reng= new Rengler();
+    $reng->reng_ad=$request->input('reng_ad');
+    $reng->save();
 
+    return back()->with("status","Yuklenme  ugurla yerine yetirildi");
+
+}
+
+
+public function rengduzenle($id ,Request $request)
+{ 
+    $reng= Rengler::find($id);
+    $reng->reng_ad=$request->input('reng_ad');
+    $reng->update();
+
+    return back()->with("status","Yenilenme   ugurla yerine yetirildi");
+
+}
+
+public function rengsil($id)
+{ 
+    $reng= Rengler::find($id);
+    
+    $reng->delete();
+
+    return back()->with("status","Silinme   ugurla yerine yetirildi");
+
+}
+
+
+
+public function sizeelaveet(Request $request)
+{ 
+    $size= new Size();
+    $size->size_ad=$request->input('size_ad');
+    $size->save();
+
+    return back()->with("status","Yuklenme  ugurla yerine yetirildi");
+
+}
+
+
+public function sizeduzenle($id ,Request $request)
+{ 
+    $size= Size::find($id);
+    $size->size_ad=$request->input('size_ad');
+    $size->update();
+
+    return back()->with("status","Yenilenme   ugurla yerine yetirildi");
+
+}
+
+public function sizesil($id)
+{ 
+    $size= Size::find($id);
+    
+    $size->delete();
+
+    return back()->with("status","Silinme   ugurla yerine yetirildi");
+
+}
 
 public function kategorielaveet(Request $request)
 { 
@@ -141,6 +204,8 @@ public function kategorielaveet(Request $request)
     return back()->with("status","Yuklenme  ugurla yerine yetirildi");
 
 }
+
+
 
 public function kateduzen($id ,Request $request)
 { 

@@ -12,6 +12,8 @@ use App\Models\Kategori;
 use App\Models\Kullanici;
 use App\Models\Mehsullar;
 use App\Models\Sherhler;
+use App\Models\Rengler;
+use App\Models\Size;
 
 use Auth;
 use Illuminate\View\View;
@@ -125,7 +127,6 @@ if($request->isMethod('post')){
 
     }
 
-
     public function mehsulyukle(){
         $kategori=Kategori::get();
         $reng=Rengler::get();
@@ -138,10 +139,53 @@ if($request->isMethod('post')){
     public function mehsulduzenle($id){
         $mehsullar=Mehsullar::find($id);
         $kategori=Kategori::get();
-
-        return view('admin.mehsul_duzenle')->with('mehsullar',$mehsullar)->with('kategori',$kategori);
+        $reng=Rengler::get();
+        $size=Size::get();
+        return view('admin.mehsul_duzenle')->with('mehsullar',$mehsullar)->with('kategori',$kategori)->with('reng',$reng)->with('size',$size);
 
     }
+
+    public function size(){
+        $size=Size::get();
+        return view('admin.sizes')->with('size',$size);
+
+    }
+
+    public function size_elavet(){
+
+        return view('admin.size_elavet');
+
+    }
+
+    public function size_yenile($id){
+        $size=Size::find($id);
+        
+
+    return view('admin.size_duzenle')->with('size',$size);
+
+
+    }
+
+    public function rengler(){
+        $reng=Rengler::get();
+        return view('admin.rengler')->with('reng',$reng);
+
+    }
+    public function reng_elavet(){
+
+        return view('admin.reng_elavet');
+
+    }
+
+    public function reng_yenile($id){
+        $reng=Rengler::find($id);
+        
+
+    return view('admin.reng_duzenle')->with('reng',$reng);
+
+
+    }
+
 
     public function istifadeciler(){
        

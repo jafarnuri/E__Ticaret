@@ -60,7 +60,7 @@
 
 
           <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{url('/admin/sherhler')}}">
               <i class="icon-paper menu-icon"></i>
               <span class="menu-title">Şərhlər</span>
             </a>
@@ -70,6 +70,20 @@
             <a class="nav-link" href="{{url('/admin/mehsullar')}}">
               <i class="icon-paper menu-icon"></i>
               <span class="menu-title">Mehsullar</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{url('/admin/rengler')}}">
+              <i class="icon-paper menu-icon"></i>
+              <span class="menu-title">Rengler</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{url('/admin/size')}}">
+              <i class="icon-paper menu-icon"></i>
+              <span class="menu-title">Size</span>
             </a>
           </li>
 

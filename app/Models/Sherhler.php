@@ -12,3 +12,5 @@ class Sherhler extends Model
     protected $fillabe=["sherh_id",
     "kullanici_id","mehsul_id","sherh_detay","ayar_achiqlama","sherh_testiq","created_at","updated_at"];
 }
+
+

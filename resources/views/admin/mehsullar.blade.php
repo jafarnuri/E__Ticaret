@@ -42,6 +42,9 @@
                   <th>Mehsul Endirim Fiyati</th>
                   <th>Mehsul Endirim Tarixi</th>
                   <th>Mehsul Umumu Melumat</th>
+                  <th>Mehsul Reng</th>
+                  <th>Mehsul Size</th>
+                  <th>Mehsul Olcu</th>
                   <th>Foto</th>
                   <th>Yenile</th>
                   <th>Sil</th>
@@ -61,6 +64,9 @@
                  <td>{{$mehsulcek->mehsul_endirimqiymet}}</td>
                  <td>{{$mehsulcek->mehsul_endirim_tarix}}</td>
                  <td>{{$mehsulcek->mehsul_melumat}}</td>
+                 <td>{{$mehsulcek->mehsul_reng}}</td>
+                 <td>{{$mehsulcek->mehsul_size}}</td>
+                 <td>{{$mehsulcek->mehsul_olcu}}</td>
                  <td><img  src="{{asset('dimg/mehsullar/'.$mehsulcek->mehsul_resm)}}" alt=""></td>
                  <td><center><a href="{{url('/admin/mehsulduzenle/'.$mehsulcek->id)}}"><button class="btn btn-primary btn-xs"><i class="fa fa-rotate-right"></i></button></a></center></td>
                  <td><center><a href="{{url('/admin/mehsulsil/'.$mehsulcek->id)}}"><button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button></a></center></td>

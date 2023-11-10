@@ -9,50 +9,103 @@
       </div>
     </div>  
 
-    <div class="site-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <img src="{{asset('/')}}frondend/images/cloth_1.jpg" alt="Image" class="img-fluid">
-          </div>
-          <div class="col-md-6">
-            <h2 class="text-black">Tank Top T-Shirt</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, vitae, explicabo? Incidunt facere, natus soluta dolores iusto! Molestiae expedita veritatis nesciunt doloremque sint asperiores fuga voluptas, distinctio, aperiam, ratione dolore.</p>
-            <p class="mb-4">Ex numquam veritatis debitis minima quo error quam eos dolorum quidem perferendis. Quos repellat dignissimos minus, eveniet nam voluptatibus molestias omnis reiciendis perspiciatis illum hic magni iste, velit aperiam quis.</p>
-            <p><strong class="text-primary h4">$50.00</strong></p>
-            <div class="mb-1 d-flex">
-              <label for="option-sm" class="d-flex mr-3 mb-3">
-                <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-sm" name="shop-sizes"></span> <span class="d-inline-block text-black">Small</span>
-              </label>
-              <label for="option-md" class="d-flex mr-3 mb-3">
-                <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-md" name="shop-sizes"></span> <span class="d-inline-block text-black">Medium</span>
-              </label>
-              <label for="option-lg" class="d-flex mr-3 mb-3">
-                <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-lg" name="shop-sizes"></span> <span class="d-inline-block text-black">Large</span>
-              </label>
-              <label for="option-xl" class="d-flex mr-3 mb-3">
-                <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-xl" name="shop-sizes"></span> <span class="d-inline-block text-black"> Extra Large</span>
-              </label>
-            </div>
-            <div class="mb-5">
-              <div class="input-group mb-3" style="max-width: 120px;">
-              <div class="input-group-prepend">
-                <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
-              </div>
-              <input type="text" class="form-control text-center" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-              <div class="input-group-append">
-                <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
-              </div>
-            </div>
+		<div class="row">
+			<div class="col-md-9"><!--Main content-->
+				<div class="title-bg">
+					<div class="title">salam</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="dt-img">
+							<div class="detpricetag"><div class="inner">56</div></div>
+							<a class="fancybox" href="images\sample-1.jpg" data-fancybox-group="gallery" title="Cras neque mi, semper leon">
+							<img src="" alt="" class="img-responsive"></a>
+						</div>
+					</div>
+					<div class="col-md-6 det-desc">
+						<div class="productdata">
+							<div class="infospan">Model   <span>ggggg</span></div>
+							<div class="infospan">Stok   <span>2</span></div>
+							<div class="infospan">Istehlakci   <span>gh</span></div>
+              <div class="infospan">Reng   <span>gh</span></div>
+							<div class="average">
+							<form role="form">
 
-            </div>
-            <p><a href="cart.html" class="buy-now btn btn-sm btn-primary">Add To Cart</a></p>
+							</form>
+							</div>
+				
+							
+							<form class="form-horizontal ava" role="form">
+		
 
-          </div>
-        </div>
-      </div>
-    </div>
+								<div class="form-group">
+									<label for="qty" class="col-sm-2 control-label">Say</label>
+									<div class="col-sm-4">
+										<select class="form-control" id="qty">
+											<option>1
+											<option>2
+											<option>3
+											<option>4
+											<option>5
+										</select>
+									</div>
+									<div class="col-sm-4">
+										<button class="btn btn-default btn-red btn-sm"><span class="addchart">Add To Chart</span></button>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</form>
+				
+						</div>
+					</div>
+				</div>
 
+				<div class="tab-review">
+					<ul id="myTab" class="nav nav-tabs shop-tab">
+						<li class="active"><a href="#desc" data-toggle="tab">Urun Detay</a></li>
+						<li class=""><a href="#rev" data-toggle="tab">Yorumlar (0)</a></li>
+						<li class=""><a href="#video" data-toggle="tab">Urun Video</a></li>
+					</ul>
+					<div id="myTabContent" class="tab-content shop-tab-ct">
+						<div class="tab-pane fade active in" id="desc">
+							<p>
+							tttttttttttttttt
+							</p>
+						</div>
+						<div class="tab-pane fade" id="rev">
+							<p class="dash">
+							<span>Jhon Doe</span> (11/25/2012)<br><br>
+							Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse.
+							</p>
+							<h4>Yorum yaz</h4>
+
+						  <form action="" method="POST" role="form">
+
+							<div class="form-group">
+								<textarea class="form-control" id="text"></textarea>
+							</div>
+		
+							<button  type="submit" class="btn btn-default btn-red btn-sm">Gonder</button>
+						  </form>
+							
+						</div>
+
+						<div class="tab-pane fade " id="video">
+									<p>
+
+										<iframe width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+
+									</p>
+								</div>
+					</div>
+				</div>
+				
+			</div><!--Main content-->
+			
+			<!--sidebar-->
+
+			<!--sidebar-->
+		</div>
     <div class="site-section block-3 site-blocks-2 bg-light">
       <div class="container">
         <div class="row justify-content-center">

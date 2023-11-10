@@ -55,6 +55,9 @@ Route::get('/about',[FrontendController::class,'about'])->name('about');
 Route::get('/bizimleelaqe',[FrontendController::class,'bizimleelaqe'])->name('bizimleelaqe');
 Route::get('/sebet',[FrontendController::class,'sebet'])->name('sebet');
 Route::get('/kategorilist/{id}',[FrontendController::class,'kategorilist'])->name('kategorilist');
+Route::get('/renglist/{id}',[FrontendController::class,'renglist'])->name('renglist');
+Route::get('/sizelist/{id}',[FrontendController::class,'sizelist'])->name('sizelist');
+Route::get('/urundetay',[FrontendController::class,'urundetay'])->name('urundetay');
 
 
 //AdminController
@@ -82,6 +85,14 @@ Route::prefix('/admin')->namespace('App\Http\Controllers')->group(function(){
         Route::get('istifadeci','AdminController@istifadeci');
         Route::get('haqqimizda','AdminController@haqqimizda');
         Route::get('haqqimizda','AdminController@haqqimizda');
+
+        Route::get('rengler','AdminController@rengler');
+        Route::get('reng_elavet','AdminController@reng_elavet');
+        Route::get('reng_yenile/{id}','AdminController@reng_yenile');
+
+        Route::get('size','AdminController@size');
+        Route::get('size_elavet','AdminController@size_elavet');
+        Route::get('size_yenile/{id}','AdminController@size_yenile');
 
 
 
@@ -120,7 +131,15 @@ Route::prefix('/admin')->namespace('App\Http\Controllers')->group(function(){
         Route::post('update_info','AdminController@update_info_admin');
         Route::post('update_resim','AdminController@admin_resim_update');
 
-
+//RengController
+        Route::post('rengelaveet','AyarController@rengelaveet');
+        Route::post('rengduzenle/{id}','AyarController@rengduzenle');
+        Route::get('rengsil/{id}','AyarController@rengsil');
+        
+//RengController
+        Route::post('sizeelaveet','AyarController@sizeelaveet');
+        Route::post('sizeduzenle/{id}','AyarController@sizeduzenle');
+        Route::get('sizesil/{id}','AyarController@sizesil');
         
 
 });

@@ -4,7 +4,7 @@
     <div class="bg-light py-3">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 mb-0"><a href="{{route('home')}}">ESAS SEYIFE</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">{{$kategori->kategoriya_ad}}</strong></div>
+          <div class="col-md-12 mb-0"><a href="{{route('home')}}">ESAS SEYIFE</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">{{$sizes->size_ad}}</strong></div>
         </div>
       </div>
     </div>
@@ -17,7 +17,7 @@
 
             <div class="row">
               <div class="col-md-12 mb-5">
-                <div class="float-md-left mb-4"><h2 class="text-black h5">{{$kategori->kategoriya_ad}}</h2></div>
+                <div class="float-md-left mb-4"><h2 class="text-black h5">{{$sizes->size_ad}}</h2></div>
                 <div class="d-flex">
                   <div class="dropdown mr-1 ml-md-auto">
                     <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -25,8 +25,8 @@
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
                 
-                    @foreach($kategoriya as $kategoriyacek)
-                      <a class="dropdown-item" href="{{url('/kategorilist/'.$kategoriyacek->id)}}">{{$kategoriyacek->kategoriya_ad}}</a>
+                    @foreach($size as $sizecek)
+                      <a class="dropdown-item" href="{{url('/sizelist/'.$sizecek->id)}}">{{$sizecek->size_ad}}</a>
                 
                       @endforeach
                     </div>
@@ -81,8 +81,8 @@
               <ul class="list-unstyled mb-0">
 
 
-              @foreach($kategoriya as $kategoriyacek)
-              <li class="mb-1"><a class="d-flex" href="{{url('/kategorilist/'.$kategoriyacek->id)}}"><span>{{$kategoriyacek->kategoriya_ad}}</span><span class="text-black ml-auto">(2,220)</span></a></li>
+              @foreach($kategori as $kategoricek)
+              <li class="mb-1"><a class="d-flex" href="{{url('/kategorilist/'.$kategoricek->id)}}"><span>{{$kategoricek->kategoriya_ad}}</span><span class="text-black ml-auto">(2,220)</span></a></li>
                 
                       @endforeach
 
