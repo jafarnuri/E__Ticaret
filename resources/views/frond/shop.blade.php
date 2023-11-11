@@ -40,10 +40,10 @@
               <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
                 <div class="block-4 text-center border">
                   <figure class="block-4-image">
-                    <a href="{{url('/urundetay/')}}"><img src="{{asset('dimg/mehsullar/'.$mehsulcek->mehsul_resm)}}" alt="Image placeholder" class="img-fluid"></a>
+                    <a href="{{url('/urundetay/'.$mehsulcek->id)}}"><img src="{{asset('dimg/mehsullar/'.$mehsulcek->mehsul_resm)}}" alt="Image placeholder" class="img-fluid"></a>
                   </figure>
                   <div class="block-4-text p-4">
-                    <h3><a href="">{{$mehsulcek->mehsul_ad}}</a></h3>
+                    <h3><a href="{{url('/urundetay/'.$mehsulcek->id)}}">{{$mehsulcek->mehsul_ad}}</a></h3>
                    
                     <p class="text-primary font-weight-bold" class="product-old-price">{{$mehsulcek->mehsul_qiymet}}</p>
                  @if(($mehsulcek->mehsul_endirimqiymet) > 0) 

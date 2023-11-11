@@ -4,7 +4,7 @@
     <div class="bg-light py-3">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 mb-0"><a href="{{route('home')}}">ESAS SEYIFE</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">{{$kategori->kategoriya_ad}}</strong></div>
+          <div class="col-md-12 mb-0"><a href="{{route('sebet')}}">ESAS SEYIFE</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">{{$kategori->kategoriya_ad}}</strong></div>
         </div>
       </div>
     </div>
@@ -40,10 +40,10 @@
               <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
                 <div class="block-4 text-center border">
                   <figure class="block-4-image">
-                    <a href="shop-single.html"><img src="{{asset('dimg/mehsullar/'.$mehsulcek->mehsul_resm)}}" alt="Image placeholder" class="img-fluid"></a>
+                    <a href="{{url('/urundetay/'.$mehsulcek->id)}}"><img src="{{asset('dimg/mehsullar/'.$mehsulcek->mehsul_resm)}}" alt="Image placeholder" class="img-fluid"></a>
                   </figure>
                   <div class="block-4-text p-4">
-                    <h3><a href="shop-single.html">{{$mehsulcek->mehsul_ad}}</a></h3>
+                    <h3><a href="{{url('/urundetay/'.$mehsulcek->id)}}">{{$mehsulcek->mehsul_ad}}</a></h3>
                     <p class="mb-0">{{$mehsulcek->mehsul_model}}</p>
                                      @if(($mehsulcek->mehsul_endirimqiymet) > 0) 
                    <span class="text-danger font-weight-bold"><del class="product-old-price">${{$mehsulcek->mehsul_endirimqiymet}}</del></span>

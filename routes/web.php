@@ -36,6 +36,8 @@ Route::get('/welcome', function () {
 
 
 
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -44,7 +46,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::get('/sebet', function () {
+        return view('frond.cart');
+    })->name('sebet');
 });
+
 
 require __DIR__.'/auth.php';
 
@@ -53,11 +60,11 @@ require __DIR__.'/auth.php';
 Route::get('/kategori',[FrontendController::class,'kategori'])->name('kategori');
 Route::get('/about',[FrontendController::class,'about'])->name('about');
 Route::get('/bizimleelaqe',[FrontendController::class,'bizimleelaqe'])->name('bizimleelaqe');
-Route::get('/sebet',[FrontendController::class,'sebet'])->name('sebet');
+
 Route::get('/kategorilist/{id}',[FrontendController::class,'kategorilist'])->name('kategorilist');
 Route::get('/renglist/{id}',[FrontendController::class,'renglist'])->name('renglist');
 Route::get('/sizelist/{id}',[FrontendController::class,'sizelist'])->name('sizelist');
-Route::get('/urundetay',[FrontendController::class,'urundetay'])->name('urundetay');
+Route::get('/urundetay/{id}',[FrontendController::class,'urundetay'])->name('urundetay');
 
 
 //AdminController

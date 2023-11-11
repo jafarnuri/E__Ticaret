@@ -20,9 +20,11 @@ class FrontendController extends Controller
         return view ('frond.shop')->with('kategori',$kategori)->with('mehsul',$mehsul)->with('reng',$reng)->with('size',$size);
 
     }
-    public function urundetay(){
-        return view('frond.shop-single');
+    public function urundetay($id){
+        $mehsul=Mehsullar::find($id);
+        return view('frond.shop-single')->with('mehsul',$mehsul);
     }
+    
     public function qeydiyyat(){
         return view('frond.qeydiyyat');
     }
@@ -37,9 +39,7 @@ class FrontendController extends Controller
         return view('frond.contact');
     }
 
-    public function sebet(){
-        return view('frond.cart');
-    }
+
     public function kategorilist($id)
     {
        $kategori=Kategori::find($id);
