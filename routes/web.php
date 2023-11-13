@@ -60,7 +60,7 @@ require __DIR__.'/auth.php';
 Route::get('/kategori',[FrontendController::class,'kategori'])->name('kategori');
 Route::get('/about',[FrontendController::class,'about'])->name('about');
 Route::get('/bizimleelaqe',[FrontendController::class,'bizimleelaqe'])->name('bizimleelaqe');
-
+Route::post('/sebetelavet',[FrontendController::class,'sebet_elavet'])->name('sebetelavet');
 Route::get('/kategorilist/{id}',[FrontendController::class,'kategorilist'])->name('kategorilist');
 Route::get('/renglist/{id}',[FrontendController::class,'renglist'])->name('renglist');
 Route::get('/sizelist/{id}',[FrontendController::class,'sizelist'])->name('sizelist');

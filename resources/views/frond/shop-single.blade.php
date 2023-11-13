@@ -1,6 +1,12 @@
 @extends('frond_layout.master')
 @section('content')
+@if(Session::has("status"))
+                        <br>
+                        <div class="alert alert-success">
+                          {{Session::get('status')}}
 
+                        </div>
+                     @endif
     <div class="bg-light py-3">
       <div class="container">
         <div class="row">
@@ -36,13 +42,15 @@
 							</div>
 				
 							
-							<form action="" method="POST" class="form-horizontal ava" role="form">
-		
+							<form action="{{route('sebetelavet')}}" method="POST" class="form-horizontal ava" role="form">
+		                          
+							@csrf
 
 								<div class="form-group">
-									<label for="qty" class="col-sm-2 control-label">Say</label>
+									<label for="first-name" class="col-sm-2 control-label">Say</label>
+			
 									<div class="col-sm-4">
-										<select class="form-control" id="qty">
+										<select class="form-control" name="mehsul_eded" id="first-name">
 											<option>1
 											<option>2
 											<option>3
@@ -50,8 +58,10 @@
 											<option>5
 										</select>
 									</div>
+									<input type="text" name="user_id" value="{{Auth::guard('web')->user()->id}}">
+									<input type="text" name="mehsul_id" value="{{$mehsul->id}}">
 									<div class="col-sm-4">
-										<button class="btn btn-primary btn-red btn-sm"><span class="addchart">Sebete Elave Et</span></button>
+										<button type="submit" class="btn btn-primary btn-red btn-sm"><span class="addchart">Sebete Elave Et</span></button>
 									</div>
 									<div class="clearfix"></div>
 								</div>

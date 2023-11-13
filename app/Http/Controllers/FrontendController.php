@@ -7,6 +7,7 @@ use App\Models\Mehsullar;
 use App\Models\Kategori;
 use App\Models\Rengler;
 use App\Models\Size;
+use App\Models\Sebet;
 
 
 class FrontendController extends Controller
@@ -78,4 +79,18 @@ class FrontendController extends Controller
      ->with('reng' , $reng)->with('size' , $size);
  
     }
+
+    public function sebet_elavet(Request $request)
+    {
+
+        $sebet=new Sebet();
+        $sebet->user_id=$request->input('user_id');
+        $sebet->mehsul_id=$request->input('mehsul_id');
+        $sebet->mehsul_eded=$request->input('mehsul_eded');
+    
+        $sebet->save();
+
+        return back()->with("status","Mehsulunuz ugurla sebete elave edildi...");
+    }
+
 }
