@@ -47,9 +47,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('/sebet', function () {
-        return view('frond.cart');
-    })->name('sebet');
+
 });
 
 
@@ -65,7 +63,7 @@ Route::get('/kategorilist/{id}',[FrontendController::class,'kategorilist'])->nam
 Route::get('/renglist/{id}',[FrontendController::class,'renglist'])->name('renglist');
 Route::get('/sizelist/{id}',[FrontendController::class,'sizelist'])->name('sizelist');
 Route::get('/urundetay/{id}',[FrontendController::class,'urundetay'])->name('urundetay');
-
+Route::get('/sebet/{id}',[FrontendController::class,'sebet'])->name('sebet');
 
 //AdminController
 Route::get('/parol_unutum',[AdminController::class,'parol_unutum_admin'])->name('parol_unutum');

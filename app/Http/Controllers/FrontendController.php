@@ -8,7 +8,8 @@ use App\Models\Kategori;
 use App\Models\Rengler;
 use App\Models\Size;
 use App\Models\Sebet;
-
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class FrontendController extends Controller
 {
@@ -91,6 +92,15 @@ class FrontendController extends Controller
         $sebet->save();
 
         return back()->with("status","Mehsulunuz ugurla sebete elave edildi...");
+    }
+
+    public function sebet($id)
+    {
+    $user=Auth::guard('web')->user()->find($id);
+    $sebet=Sebet::where("user_id", '=', $user->id);
+    $mehsul=Mehsullar::where("id", '=', $sebet->mehsul_id)->get();
+       
+     return view ('frond.cart')->with('sebet',$sebet)->with('mehsul',$mehsul);
     }
 
 }

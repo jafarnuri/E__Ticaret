@@ -58,8 +58,8 @@
 											<option>5
 										</select>
 									</div>
-									<input type="text" name="user_id" value="{{Auth::guard('web')->user()->id}}">
-									<input type="text" name="mehsul_id" value="{{$mehsul->id}}">
+									<input type="hidden" name="user_id" value="{{Auth::guard('web')->user()->id}}">
+									<input type="hidden" name="mehsul_id" value="{{$mehsul->id}}">
 									<div class="col-sm-4">
 										<button type="submit" class="btn btn-primary btn-red btn-sm"><span class="addchart">Sebete Elave Et</span></button>
 									</div>

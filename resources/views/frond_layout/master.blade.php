@@ -20,7 +20,7 @@
 
     <link rel="stylesheet" href="{{asset('/')}}frondend/css/style.css">
     
-  </head>
+  </head>  
   <body>
   
   <div class="site-wrap">

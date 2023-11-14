@@ -69,7 +69,7 @@ $kategori=Kategori::get();
             <li><a href="{{route('about')}}">Haqqimizda</a></li>
             <li><a href="{{route('bizimleelaqe')}}">Bizimle elaqe</a></li>
             
-            <li><a href="{{route('sebet')}}">Sebet</a></li>
+            <li><a href="{{url('/sebet/'.Auth::guard('web')->user()->id)}}">Sebet</a></li>
           
           </ul>
         </div>
