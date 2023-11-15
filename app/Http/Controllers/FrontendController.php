@@ -81,26 +81,33 @@ class FrontendController extends Controller
  
     }
 
-    public function sebet_elavet(Request $request)
+    public function sebet_elavet($id)
     {
 
-        $sebet=new Sebet();
-        $sebet->user_id=$request->input('user_id');
-        $sebet->mehsul_id=$request->input('mehsul_id');
-        $sebet->mehsul_eded=$request->input('mehsul_eded');
-    
-        $sebet->save();
+        $mehsul= Mehsullar::findOrFail($id);
+        $cart= session()->get('cart',[]);
+        if(isset($cart[$id])){
+            $cart[$id]['quantity']++;
+        }else{
+            $cart[$id]=[
+                "mehsul_ad"=>$mehsul->mehsul_ad,
+                "mehsul_model"=>$mehsul->mehsul_model,
+                "mehsul_reng"=>$mehsul->mehsul_reng,
+                "mehsul_resm"=>$mehsul->mehsul_resm,
+                "mehsul_qiymet"=>$mehsul->mehsul_qiymet,
+                "quantity"=>1
+            ];
+        }
+
+        session()->put('cart',$cart);
+
 
         return back()->with("status","Mehsulunuz ugurla sebete elave edildi...");
     }
 
-    public function sebet($id)
-    {
-    $user=Auth::guard('web')->user()->find($id);
-    $sebet=Sebet::where("user_id", '=', $user->id);
-    $mehsul=Mehsullar::where("id", '=', $sebet->mehsul_id)->get();
-       
-     return view ('frond.cart')->with('sebet',$sebet)->with('mehsul',$mehsul);
-    }
+
+
+    
+
 
 }

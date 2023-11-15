@@ -31,12 +31,12 @@
                    
                     @foreach($mehsul as $mehsulcek)
                     <td class="product-thumbnail">
-                      <img src="{{asset('dimg/mehsullar/'.$mehsulcek->mehsul_resm)}}" alt="Image" class="img-fluid">
+                      <img src="" alt="Image" class="img-fluid">
                     </td>
                     <td class="product-name">
-                      <h2 class="h5 text-black">{{$mehsulcek->mehsul_ad}}</h2>
+                      <h2 class="h5 text-black"></h2>
                     </td>
-                    <td>{{$mehsulcek->mehsul_qiymet}}</td>
+                    <td>{{$mehsulcek->mehsul_ad}}</td>
                     <td>
                       <div class="input-group mb-3" style="max-width: 120px;">
                         <div class="input-group-prepend">

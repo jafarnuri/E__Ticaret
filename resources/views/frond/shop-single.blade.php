@@ -42,7 +42,7 @@
 							</div>
 				
 							
-							<form action="{{route('sebetelavet')}}" method="POST" class="form-horizontal ava" role="form">
+							<form action="{{route('sebetelavet',$mehsul->id)}}" method="POST" class="form-horizontal ava" role="form">
 		                          
 							@csrf
 
