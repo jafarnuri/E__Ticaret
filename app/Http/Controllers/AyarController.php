@@ -211,7 +211,7 @@ public function kateduzen($id ,Request $request)
 { 
     $kategori= Kategori::find($id);
     $kategori->kategoriya_ad=$request->input('kategoriya_ad');
-    $kategori->update();
+    $kategori->update(); 
 
     return back()->with("status","Yenilenme   ugurla yerine yetirildi");
 

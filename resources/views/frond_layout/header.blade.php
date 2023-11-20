@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Support\Facades\Auth;
 use App\Models\Kategori;
 $kategori=Kategori::get();
 ?>
@@ -56,7 +57,7 @@ $kategori=Kategori::get();
       <nav class="site-navigation text-right text-md-center" role="navigation">
         <div class="container">
           <ul class="site-menu js-clone-nav d-none d-md-block">
-          <li><a href="{{route('home')}}">Esas seyife</a></li>
+          <li><a href="{{route('home')}}">{{__('msg.home')}}</a></li>
             <li class="has-children active">
               <a href="{{route('kategori')}}">Kateqori</a>
               
@@ -69,7 +70,22 @@ $kategori=Kategori::get();
             <li><a href="{{route('about')}}">Haqqimizda</a></li>
             <li><a href="{{route('bizimleelaqe')}}">Bizimle elaqe</a></li>
             
-            <li><a href="{{url('/sebet/'.Auth::guard('web')->user()->id)}}">Sebet</a></li>
+            <?php
+            if(Auth::user()){?>
+              <li><a  href="{{url('/sebet/'.Auth::user()->id)}}">Sebet</a></li>
+           <?php }?>
+
+
+           <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Language</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="{{url('/en')}}">En (English)</a>
+              <a class="dropdown-item" href="{{url('/az')}}">Az (Azeri)</a>
+          </div>
+      </li>
+
+             
+        
           
           </ul>
         </div>

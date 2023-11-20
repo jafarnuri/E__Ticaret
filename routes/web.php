@@ -26,15 +26,15 @@ use App\Http\Controllers\AdminProfilController;
 |
 */
 //FrontendController
-Route::get('/', function () {
-    return view('frond/home');
-})->name('home');
+
 
 Route::get('/welcome', function () {
     return view('welcome');
 })->name('welcome');
 
-
+Route::get('/sebett', function () {
+        return view('frond.cart');
+    });
 
 
 
@@ -53,16 +53,28 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-
-//FrontendController
-Route::get('/kategori',[FrontendController::class,'kategori'])->name('kategori');
-Route::get('/about',[FrontendController::class,'about'])->name('about');
-Route::get('/bizimleelaqe',[FrontendController::class,'bizimleelaqe'])->name('bizimleelaqe');
-Route::post('/sebetelavet/{id}',[FrontendController::class,'sebet_elavet'])->name('sebetelavet');
-Route::get('/kategorilist/{id}',[FrontendController::class,'kategorilist'])->name('kategorilist');
-Route::get('/renglist/{id}',[FrontendController::class,'renglist'])->name('renglist');
-Route::get('/sizelist/{id}',[FrontendController::class,'sizelist'])->name('sizelist');
-Route::get('/urundetay/{id}',[FrontendController::class,'urundetay'])->name('urundetay');
+Route::group(
+        [
+                'prefix' => LaravelLocalization::setLocale(),
+                'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+        ], function(){ //...
+        
+                Route::get('/', function () {
+                        return view('frond/home');
+                    })->name('home');
+        
+        });
+        
+        //FrontendController
+        Route::get('/kategori',[FrontendController::class,'kategori'])->name('kategori');
+        Route::get('/about',[FrontendController::class,'about'])->name('about');
+        Route::get('/bizimleelaqe',[FrontendController::class,'bizimleelaqe'])->name('bizimleelaqe');
+        Route::post('/sebetelavet',[FrontendController::class,'sebetelavet'])->name('sebetelavet');
+        Route::get('/kategorilist/{id}',[FrontendController::class,'kategorilist'])->name('kategorilist');
+        Route::get('/renglist/{id}',[FrontendController::class,'renglist'])->name('renglist');
+        Route::get('/sizelist/{id}',[FrontendController::class,'sizelist'])->name('sizelist');
+        Route::get('/urundetay/{id}',[FrontendController::class,'urundetay'])->name('urundetay');
+        Route::get('/sebet/{id}',[FrontendController::class,'sebet'])->name('sebet');
 
 
 //AdminController

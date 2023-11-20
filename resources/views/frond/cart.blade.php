@@ -1,11 +1,10 @@
-
 @extends('frond_layout.master')
-
 @section('content')
+<?php use App\Models\Mehsullar;?>
 <div class="bg-light py-3">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 mb-0"><a href="{{route('home')}}">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Cart</strong></div>
+          <div class="col-md-12 mb-0"><a href="index.html">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Cart</strong></div>
         </div>
       </div>
     </div>
@@ -13,48 +12,60 @@
     <div class="site-section">
       <div class="container">
         <div class="row mb-5">
+        @if(Session::has("error"))
+                        <br>
+                        <div class="alert alert-danger">
+                          {{Session::get('error')}}
+
+                        </div>
+                     @endif
           <form class="col-md-12" method="post">
+          @csrf
             <div class="site-blocks-table">
               <table class="table table-bordered">
                 <thead>
                   <tr>
-                    <th class="product-thumbnail">Shekil</th>
-                    <th class="product-name">Ad</th>
+                    <th class="product-thumbnail">Sekil</th>
+                    <th class="product-name">Mehsul</th>
                     <th class="product-price">Qiymet</th>
-                    <th class="product-quantity">Say</th>
-                    <th class="product-total">Toplam Qiymet</th>
+                    <th class="product-quantity">Eded</th>
+                    <th class="product-total">Yekun Qiymet</th>
                     <th class="product-remove">Sil</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                   
-                    @foreach($mehsul as $mehsulcek)
+
+                  @if($sebet)
+               @foreach($sebet as $sebetcek)
+              <?php
+               $mehsul=Mehsullar::where("id",'=',$sebetcek->mehsul_id)->first();
+
+               ?>
+                   <tr>
                     <td class="product-thumbnail">
-                      <img src="" alt="Image" class="img-fluid">
+                      <img src="{{asset('dimg/mehsullar/'.$mehsul->mehsul_resm)}}" alt="Image" class="img-fluid">
                     </td>
                     <td class="product-name">
-                      <h2 class="h5 text-black"></h2>
+                      <h2 class="h5 text-black">{{$mehsul->mehsul_ad}}</h2>
                     </td>
-                    <td>{{$mehsulcek->mehsul_ad}}</td>
+                    <td>{{$mehsul->mehsul_qiymet}}</td>
                     <td>
                       <div class="input-group mb-3" style="max-width: 120px;">
                         <div class="input-group-prepend">
                           <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
                         </div>
-                        <input type="text" name="mehsul_eded" class="form-control text-center" value="" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                        <input type="text" class="form-control text-center" value="{{$sebetcek->mehsul_eded}}" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
                         <div class="input-group-append">
                           <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
                         </div>
                       </div>
 
                     </td>
-                    <td></td>
+                    <td>{{($mehsul->mehsul_qiymet)*($sebetcek->mehsul_eded)}}</td>
                     <td><a href="#" class="btn btn-primary btn-sm">X</a></td>
                   </tr>
                   @endforeach
-                  
-
+                  @endif
 
                 </tbody>
               </table>
@@ -66,22 +77,22 @@
           <div class="col-md-6">
             <div class="row mb-5">
               <div class="col-md-6 mb-3 mb-md-0">
-                <button class="btn btn-primary btn-sm btn-block">Update Cart</button>
+                <button class="btn btn-primary btn-sm btn-block">Sebeti Yenile</button>
               </div>
               <div class="col-md-6">
-                <button class="btn btn-outline-primary btn-sm btn-block">Continue Shopping</button>
+                <button class="btn btn-outline-primary btn-sm btn-block">Alisa davam edin</button>
               </div>
             </div>
             <div class="row">
               <div class="col-md-12">
-                <label class="text-black h4" for="coupon">Coupon</label>
-                <p>Enter your coupon code if you have one.</p>
+                <label class="text-black h4" for="coupon">Kupon</label>
+                <p>Kupon kodunuzu daxil ede bilersiz.</p>
               </div>
               <div class="col-md-8 mb-3 mb-md-0">
-                <input type="text" class="form-control py-3" id="coupon" placeholder="Coupon Code">
+                <input type="text" class="form-control py-3" id="coupon" placeholder="Endirim kupon kodu">
               </div>
               <div class="col-md-4">
-                <button class="btn btn-primary btn-sm">Apply Coupon</button>
+                <button class="btn btn-primary btn-sm">Kupon kodunu testiq edin</button>
               </div>
             </div>
           </div>
@@ -90,23 +101,16 @@
               <div class="col-md-7">
                 <div class="row">
                   <div class="col-md-12 text-right border-bottom mb-5">
-                    <h3 class="text-black h4 text-uppercase">Cart Totals</h3>
+                    <h3 class="text-black h4 text-uppercase">Yekun Hesab</h3>
                   </div>
                 </div>
-                <div class="row mb-3">
-                  <div class="col-md-6">
-                    <span class="text-black">Subtotal</span>
-                  </div>
-                  <div class="col-md-6 text-right">
-                    <strong class="text-black">$230.00</strong>
-                  </div>
-                </div>
+
                 <div class="row mb-5">
                   <div class="col-md-6">
-                    <span class="text-black">Total</span>
+                    <span class="text-black">Toplam </span>
                   </div>
                   <div class="col-md-6 text-right">
-                    <strong class="text-black">$230.00</strong>
+                    <strong class="text-black"></strong>
                   </div>
                 </div>
 
@@ -121,4 +125,4 @@
         </div>
       </div>
     </div>
-   @endsection
+    @endsection

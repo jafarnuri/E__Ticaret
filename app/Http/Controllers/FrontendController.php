@@ -10,7 +10,7 @@ use App\Models\Size;
 use App\Models\Sebet;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-
+use App\Http\Controllers\Route;
 class FrontendController extends Controller
 {
     public function kategori (){
@@ -81,32 +81,34 @@ class FrontendController extends Controller
  
     }
 
-    public function sebet_elavet($id)
+    public function sebetelavet(Request $request)
     {
+     if(Auth::guard('web')->user()){
 
-        $mehsul= Mehsullar::findOrFail($id);
-        $cart= session()->get('cart',[]);
-        if(isset($cart[$id])){
-            $cart[$id]['quantity']++;
-        }else{
-            $cart[$id]=[
-                "mehsul_ad"=>$mehsul->mehsul_ad,
-                "mehsul_model"=>$mehsul->mehsul_model,
-                "mehsul_reng"=>$mehsul->mehsul_reng,
-                "mehsul_resm"=>$mehsul->mehsul_resm,
-                "mehsul_qiymet"=>$mehsul->mehsul_qiymet,
-                "quantity"=>1
-            ];
-        }
-
-        session()->put('cart',$cart);
-
-
+        $sebet=new Sebet();
+        $sebet->mehsul_id=$request->input('mehsul_id');
+        $sebet->user_id=$request->input('user_id');
+        $sebet->mehsul_eded=$request->input('mehsul_eded');
+        $sebet->save();
         return back()->with("status","Mehsulunuz ugurla sebete elave edildi...");
+
+     }else{
+        return back()->with("error","Hesaba giris etmelisiz");
+     }
+
     }
+    public function sebet($id, Request $request)
+    {
+        $user=Auth::user()->find($id);
+        $sebet=Sebet::where("user_id",'=',$user->id)->get();
 
 
+            return view ('frond.cart')->with('sebet',$sebet);
 
+        
+    
+    }
+ 
     
 
 
