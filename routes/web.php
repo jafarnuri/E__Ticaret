@@ -15,6 +15,7 @@ use App\Http\Controllers\AdminProfilController;
 
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,53 +29,28 @@ use App\Http\Controllers\AdminProfilController;
 //FrontendController
 
 
-Route::get('/welcome', function () {
-    return view('welcome');
-})->name('welcome');
 
-Route::get('/sebett', function () {
-        return view('frond.cart');
-    });
-
-
-
+Route::get('/', function () {
+        return view('frond/home');
+})->name('home');
+ 
 Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+        return view('dashboard');
+    })->middleware(['auth', 'verified'])->name('dashboard');
+    
+    Route::middleware('auth')->group(function () {
+        Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+        Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+        Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    
+    
+    });
+    
+    
+    require __DIR__.'/auth.php';
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
-
-});
-
-
-require __DIR__.'/auth.php';
-
-Route::group(
-        [
-                'prefix' => LaravelLocalization::setLocale(),
-                'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
-        ], function(){ //...
         
-                Route::get('/', function () {
-                        return view('frond/home');
-                    })->name('home');
-        
-        });
-        
-        //FrontendController
-        Route::get('/kategori',[FrontendController::class,'kategori'])->name('kategori');
-        Route::get('/about',[FrontendController::class,'about'])->name('about');
-        Route::get('/bizimleelaqe',[FrontendController::class,'bizimleelaqe'])->name('bizimleelaqe');
-        Route::post('/sebetelavet',[FrontendController::class,'sebetelavet'])->name('sebetelavet');
-        Route::get('/kategorilist/{id}',[FrontendController::class,'kategorilist'])->name('kategorilist');
-        Route::get('/renglist/{id}',[FrontendController::class,'renglist'])->name('renglist');
-        Route::get('/sizelist/{id}',[FrontendController::class,'sizelist'])->name('sizelist');
-        Route::get('/urundetay/{id}',[FrontendController::class,'urundetay'])->name('urundetay');
-        Route::get('/sebet/{id}',[FrontendController::class,'sebet'])->name('sebet');
+       
 
 
 //AdminController
@@ -163,5 +139,25 @@ Route::prefix('/admin')->namespace('App\Http\Controllers')->group(function(){
 });
 
 
+                                         //FrontendController
+        Route::get('/kategori',[FrontendController::class,'kategori'])->name('kategori');
+        Route::get('/about',[FrontendController::class,'about'])->name('about');
+        Route::get('/bizimleelaqe',[FrontendController::class,'bizimleelaqe'])->name('bizimleelaqe');
+        Route::post('/sebetelavet',[FrontendController::class,'sebetelavet'])->name('sebetelavet');
+        Route::get('/kategorilist/{id}',[FrontendController::class,'kategorilist'])->name('kategorilist'); 
+        Route::get('/renglist/{id}',[FrontendController::class,'renglist'])->name('renglist');
+        Route::get('/sizelist/{id}',[FrontendController::class,'sizelist'])->name('sizelist');
+        Route::get('/urundetay/{id}',[FrontendController::class,'urundetay'])->name('urundetay');
+        Route::get('/sebet/{id}',[FrontendController::class,'sebet'])->name('sebet');
 
 
+                
+
+            
+        Route::get('/welcome', function () {
+                return view('welcome');
+                })->name('welcome');
+
+    
+
+  
