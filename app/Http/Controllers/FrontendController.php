@@ -40,6 +40,7 @@ class FrontendController extends Controller
     public function bizimleelaqe(){
         return view('frond.contact');
     }
+    
 
 
     public function kategorilist($id)

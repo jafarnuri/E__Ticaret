@@ -12,8 +12,9 @@ use App\Http\Controllers\KullaniciController;
 use App\Http\Controllers\MehsullarController;
 use App\Http\Controllers\SherhlerController;
 use App\Http\Controllers\AdminProfilController;
+use App\Http\Controllers\LocalizationController;
 
-
+use App\Http\Middleware\Localization;
 
 
 /*
@@ -28,29 +29,44 @@ use App\Http\Controllers\AdminProfilController;
 */
 //FrontendController
 
-
-
-Route::get('/', function () {
-        return view('frond/home');
-})->name('home');
- 
-Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->middleware(['auth', 'verified'])->name('dashboard');
-    
-    Route::middleware('auth')->group(function () {
-        Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-        Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-        Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    
-    
-    });
-    
-    
-    require __DIR__.'/auth.php';
-
+Route::get('/localization/{locale}',LocalizationController::class)->name('localization');
+Route::middleware(Localization::class)->group(function(){
         
-       
+
+
+            Route::get('/',function(){
+                return view('frond.home');
+        });
+                //FrontendController
+                Route::get('/kategori',[FrontendController::class,'kategori'])->name('kategori');
+                Route::get('/about',[FrontendController::class,'about'])->name('about');
+                Route::get('/bizimleelaqe',[FrontendController::class,'bizimleelaqe'])->name('bizimleelaqe');
+                Route::post('/sebetelavet',[FrontendController::class,'sebetelavet'])->name('sebetelavet');
+                Route::get('/kategorilist/{id}',[FrontendController::class,'kategorilist'])->name('kategorilist'); 
+                Route::get('/renglist/{id}',[FrontendController::class,'renglist'])->name('renglist');
+                Route::get('/sizelist/{id}',[FrontendController::class,'sizelist'])->name('sizelist');
+                Route::get('/urundetay/{id}',[FrontendController::class,'urundetay'])->name('urundetay');
+                Route::get('/sebet/{id}',[FrontendController::class,'sebet'])->name('sebet');
+                Route::get('/dashboard', function () {
+                        return view('dashboard');
+                    })->middleware(['auth','verified'])->name('dashboard');
+                    
+                    Route::middleware('auth')->group(function () {
+                        Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+                        Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+                        Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+                    
+                    
+                    });
+                    
+                    
+                    require __DIR__.'/auth.php';
+                
+        
+        
+        
+});
+
 
 
 //AdminController
@@ -138,20 +154,6 @@ Route::prefix('/admin')->namespace('App\Http\Controllers')->group(function(){
 });
 });
 
-
-                                         //FrontendController
-        Route::get('/kategori',[FrontendController::class,'kategori'])->name('kategori');
-        Route::get('/about',[FrontendController::class,'about'])->name('about');
-        Route::get('/bizimleelaqe',[FrontendController::class,'bizimleelaqe'])->name('bizimleelaqe');
-        Route::post('/sebetelavet',[FrontendController::class,'sebetelavet'])->name('sebetelavet');
-        Route::get('/kategorilist/{id}',[FrontendController::class,'kategorilist'])->name('kategorilist'); 
-        Route::get('/renglist/{id}',[FrontendController::class,'renglist'])->name('renglist');
-        Route::get('/sizelist/{id}',[FrontendController::class,'sizelist'])->name('sizelist');
-        Route::get('/urundetay/{id}',[FrontendController::class,'urundetay'])->name('urundetay');
-        Route::get('/sebet/{id}',[FrontendController::class,'sebet'])->name('sebet');
-
-
-                
 
             
         Route::get('/welcome', function () {

@@ -59,9 +59,9 @@ $kategori=Kategori::get();
       <nav class="site-navigation text-right text-md-center" role="navigation">
         <div class="container">
           <ul class="site-menu js-clone-nav d-none d-md-block">
-          <li><a href="{{route('home')}}">Home</a></li>
+          <li><a href="{{url('/')}}">{{__('msg.home')}}</a></li>
             <li class="has-children active">
-              <a href="{{route('kategori')}}"></a>
+              <a href="{{route('kategori')}}">{{__('msg.categories')}}</a>
               
               <ul class="dropdown">
               @foreach($kategori as $katecek)
@@ -69,19 +69,19 @@ $kategori=Kategori::get();
               @endforeach
               </ul>
             </li>
-            <li><a href="{{route('about')}}">Haqqimizda</a></li>
-            <li><a href="{{route('bizimleelaqe')}}">Bizimle elaqe</a></li>
+            <li><a href="{{route('about')}}">{{__('msg.about')}}</a></li>
+            <li><a href="{{route('bizimleelaqe')}}">{{__('msg.contact')}}</a></li>
             <?php
             if(Auth::user()){?>
-              <li><a  href="{{url('/sebet/'.Auth::user()->id)}}">Sebet</a></li>
+              <li><a  href="{{url('/sebet/'.Auth::user()->id)}}">{{__('msg.cart')}}</a></li>
            <?php }?>
             
             <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Language</a>
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{__('msg.language')}}</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="">En (English)</a>
-              <a class="dropdown-item" href="">Az (Azerbaijan)</a>
-              <a class="dropdown-item" href="">Tr (Turkish)</a>
+              @foreach(config('localization.locales') as $locale)
+              <a class="dropdown-item" href="{{route('localization',$locale)}}">{{__($locale)}}</a>
+              @endforeach
             </div>
             </li>
 

@@ -63,7 +63,10 @@
                  <td>{{$mehsulcek->mehsul_qiymet}}</td>
                  <td>{{$mehsulcek->mehsul_endirimqiymet}}</td>
                  <td>{{$mehsulcek->mehsul_endirim_tarix}}</td>
-                 <td>{{$mehsulcek->mehsul_melumat}}</td>
+                 <td> 
+                        <textarea {{$mehsulcek->mehsul_melumat}} ></textarea>
+
+                  </td>
                  <td>{{$mehsulcek->mehsul_reng}}</td>
                  <td>{{$mehsulcek->mehsul_size}}</td>
                  <td>{{$mehsulcek->mehsul_olcu}}</td>

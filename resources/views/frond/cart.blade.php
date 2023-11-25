@@ -4,7 +4,7 @@
 <div class="bg-light py-3">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 mb-0"><a href="index.html">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Cart</strong></div>
+          <div class="col-md-12 mb-0"><a href="{{url('/')}}">{{__('msg.home')}}</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">{{__('msg.cart')}}</strong></div>
         </div>
       </div>
     </div>
@@ -25,12 +25,12 @@
               <table class="table table-bordered">
                 <thead>
                   <tr>
-                    <th class="product-thumbnail">Sekil</th>
-                    <th class="product-name">Mehsul</th>
-                    <th class="product-price">Qiymet</th>
-                    <th class="product-quantity">Eded</th>
-                    <th class="product-total">Yekun Qiymet</th>
-                    <th class="product-remove">Sil</th>
+                    <th class="product-thumbnail">{{__('msg.image')}}</th>
+                    <th class="product-name">{{__('msg.product')}}</th>
+                    <th class="product-price">{{__('msg.price')}}</th>
+                    <th class="product-quantity">{{__('msg.quantity')}}</th>
+                    <th class="product-total">{{__('msg.total')}}</th>
+                    <th class="product-remove">{{__('msg.remove')}}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -101,7 +101,7 @@
               <div class="col-md-7">
                 <div class="row">
                   <div class="col-md-12 text-right border-bottom mb-5">
-                    <h3 class="text-black h4 text-uppercase">Yekun Hesab</h3>
+                    <h3 class="text-black h4 text-uppercase">{{__('msg.cart totals')}}</h3>
                   </div>
                 </div>
 
