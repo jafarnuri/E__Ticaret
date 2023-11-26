@@ -64,7 +64,7 @@ class AyarController extends Controller
 
    $sosial=Sosial::first();
    $sosial->sosial_facebook=$request->input('sosial_facebook');
-   $sosial->sosial_twitter=$request->input('sosial_twitter');
+   $sosial->sosial_linkedin=$request->input('sosial_linkedin');
    $sosial->sosial_instagram=$request->input('sosial_instagram');
    $sosial->sosial_youtube=$request->input('sosial_youtube');
    $sosial->update();

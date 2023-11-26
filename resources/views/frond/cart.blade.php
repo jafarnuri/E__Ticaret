@@ -74,28 +74,7 @@
         </div>
 
         <div class="row">
-          <div class="col-md-6">
-            <div class="row mb-5">
-              <div class="col-md-6 mb-3 mb-md-0">
-                <button class="btn btn-primary btn-sm btn-block">Sebeti Yenile</button>
-              </div>
-              <div class="col-md-6">
-                <button class="btn btn-outline-primary btn-sm btn-block">Alisa davam edin</button>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                <label class="text-black h4" for="coupon">Kupon</label>
-                <p>Kupon kodunuzu daxil ede bilersiz.</p>
-              </div>
-              <div class="col-md-8 mb-3 mb-md-0">
-                <input type="text" class="form-control py-3" id="coupon" placeholder="Endirim kupon kodu">
-              </div>
-              <div class="col-md-4">
-                <button class="btn btn-primary btn-sm">Kupon kodunu testiq edin</button>
-              </div>
-            </div>
-          </div>
+
           <div class="col-md-6 pl-5">
             <div class="row justify-content-end">
               <div class="col-md-7">
@@ -107,7 +86,7 @@
 
                 <div class="row mb-5">
                   <div class="col-md-6">
-                    <span class="text-black">Toplam </span>
+                    <span class="text-black">{{__('msg.total')}} </span>
                   </div>
                   <div class="col-md-6 text-right">
                     <strong class="text-black"></strong>
@@ -116,7 +95,7 @@
 
                 <div class="row">
                   <div class="col-md-12">
-                    <button class="btn btn-primary btn-lg py-3 btn-block" onclick="window.location='checkout.html'">Proceed To Checkout</button>
+                    <button class="btn btn-primary btn-lg py-3 btn-block" onclick="window.location='checkout.html'">{{__('msg.proceed to checkout')}}</button>
                   </div>
                 </div>
               </div>

@@ -37,5 +37,7 @@ return[
     'contact Info'=>'Contact Info',
     'footer'=>'Copyright  All rights reserved',
     'muellif'=>'This site was written by Jafar Nuriyev',
+    'navigations'=>'Navigations',
+    'social media'=>'Social  Media',
     
 ];

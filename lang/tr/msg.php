@@ -30,12 +30,15 @@ return[
     'last name'=>'Soy Isim',
     'subject'=>'Konu',
     'message'=>'Mesaj',
+    'shop now'=>'Şimdi satın al',
     'send message'=>'Mesaj Ilet',
     'our customers are very valuable to us'=>'Müşterilerimiz bizim için çok değerlidir...',
     'customer rights are fully protected'=>'Müşteri hakları tamamen korunmaktadır...',
     'contact Info'=>'Iletişim bilgileri',
     'footer'=>'Tüm hakları saklıdır',
     'muellif'=>'Bu site Cafer Nuriyev tarafından yazılmıştır.',
+    'navigations'=>'Gezinmeler',
+    'social media'=>'Sosyal Medya ',
 
 
 ];

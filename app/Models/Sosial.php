@@ -10,5 +10,5 @@ class Sosial extends Model
     use HasFactory;
     protected $table="sosial";
     protected $fillabe=["id",
-    "sosial_facebook","sosial_twitter","sosial_instagram","sosial_youtube","created_at","updated_at"];
+    "sosial_facebook","sosial_linkedin","sosial_instagram","sosial_youtube","created_at","updated_at"];
 }

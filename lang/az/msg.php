@@ -30,12 +30,14 @@ return[
     'last name'=>'Soy Ad',
     'subject'=>'Mövzu',
     'message'=>'Mesaj',
+    'shop now'=>'İndi alış-veriş edin',
     'send message'=>'MesaJ Göndər',
     'our customers are very valuable to us'=>'Müştərilərimiz bizim üçün çox dəyərlidir...',
     'customer rights are fully protected'=>'Müştəri hüquqları tam qorunur...',
     'contact Info'=>'Əlaqə məlumatı',
     'footer'=>'Bütün hüquqlar qorunur',
     'muellif'=>'Bu sayt Cəfər Nuriyev tərəfindən yazılmışdır',
-    
+    'navigations'=>'Naviqasiyalar',
+    'social media'=>'Sosial Mediya ',
 
 ];

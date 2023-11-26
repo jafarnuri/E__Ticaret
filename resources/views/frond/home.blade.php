@@ -8,13 +8,14 @@
         <div class="row align-items-start align-items-md-center justify-content-end">
         <img src="{{asset('/')}}frondend/images/cloth_2.jpg" alt="Image placeholder" class="img-fluid">
           <div class="col-md-5 text-center text-md-left pt-5 pt-md-0">
-            <h1 class="mb-2">///////////////
+            <h1 class="mb-2"><a href="{{url('/')}}" class="js-logo-clone">Trend Az</a>
           
-            </h1>
+            </h1>   
             <div class="intro-text text-center text-md-left">
-              <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer accumsan tincidunt fringilla. </p>
+              <p class="mb-4">{{__('msg.our customers are very valuable to us')}} </p>
+              <p class="mb-4">{{__('msg.customer rights are fully protected')}} </p>
               <p>
-                <a href="#" class="btn btn-sm btn-primary">Shop Now</a>
+                <a href="{{route('kategori')}}" class="btn btn-sm btn-primary">{{__('msg.shop now')}}</a>
               </p>
             </div>
           </div>
@@ -56,45 +57,6 @@
       </div>
     </div>
 
-    <div class="site-section site-blocks-2">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade" data-aos-delay="">
-            <a class="block-2-item" href="#">
-              <figure class="image">
-                <img src="{{asset('/')}}frondend/images/women.jpg" alt="" class="img-fluid">
-              </figure>
-              <div class="text">
-                <span class="text-uppercase">{{__('msg.categories')}}</span>
-                <h3>Women</h3>
-              </div>
-            </a>
-          </div>
-          <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="100">
-            <a class="block-2-item" href="#">
-              <figure class="image">
-                <img src="{{asset('/')}}frondend/images/children.jpg" alt="" class="img-fluid">
-              </figure>
-              <div class="text">
-                <span class="text-uppercase">{{__('msg.categories')}}</span>
-                <h3>Children</h3>
-              </div>
-            </a>
-          </div>
-          <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
-            <a class="block-2-item" href="#">
-              <figure class="image">
-                <img src="{{asset('/')}}frondend/images/men.jpg" alt="" class="img-fluid">
-              </figure>
-              <div class="text">
-                <span class="text-uppercase">{{__('msg.categories')}}</span>
-                <h3>Men</h3>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
 
    
 

@@ -37,9 +37,9 @@
         <p>{{$mehsul->mehsul_melumat}}</p>
         
         @if(($mehsul->mehsul_endirimqiymet) > 0) 
-                   <span class="text-danger font-weight-bold"><del class="product-old-price">{{$mehsul->mehsul_endirimqiymet}}azn</del></span>
+                   <span class="text-danger font-weight-bold"><del class="product-old-price">{{$mehsul->mehsul_endirimqiymet}}<img src="{{asset('icons/manat_9585233.png')}}" alt="Image placeholder"  width="15" height="13"></del></span>
                    @endif
-        <p><strong class="text-primary h4">{{$mehsul->mehsul_qiymet}}azn</strong></p>
+        <p><strong class="text-primary h4">{{$mehsul->mehsul_qiymet}}<img src="{{asset('icons/manat_9585233.png')}}" alt="Image placeholder"  width="15" height="13"></strong></p>
         <div class="mb-1 d-flex">
           <label for="option-sm" class="d-flex mr-3 mb-3">
             <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-sm" name="size"></span> <span class="d-inline-block text-black">Small</span>
