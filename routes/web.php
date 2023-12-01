@@ -38,6 +38,8 @@ Route::middleware(Localization::class)->group(function(){
                 return view('frond.home');
         });
                 //FrontendController
+                
+               
                 Route::get('/kategori',[FrontendController::class,'kategori'])->name('kategori');
                 Route::get('/about',[FrontendController::class,'about'])->name('about');
                 Route::get('/bizimleelaqe',[FrontendController::class,'bizimleelaqe'])->name('bizimleelaqe');

@@ -17,8 +17,8 @@
           </div>
           <div class="col-md-7">
 
-            <form action="#" method="post">
-              
+            <form action="" method="post">
+            @csrf
               <div class="p-3 p-lg-5 border">
                 <div class="form-group row">
                   <div class="col-md-6">
@@ -51,9 +51,11 @@
                 </div>
                 <div class="form-group row">
                   <div class="col-lg-12">
-                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="{{__('msg.send message')}}">
+                  <button type="submit" name="" class="btn btn-primary btn-lg btn-block">{{__('msg.send message')}}</button>
+                   
                   </div>
                 </div>
+
               </div>
             </form>
           </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Mehsullar;
+use App\Models\Haqqimizda;
 use App\Models\Kategori;
 use App\Models\Rengler;
 use App\Models\Size;
@@ -11,8 +12,11 @@ use App\Models\Sebet;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Route;
+
 class FrontendController extends Controller
 {
+
+
     public function kategori (){
         $kategori=Kategori::get();
         $mehsul=Mehsullar::get();
@@ -34,7 +38,9 @@ class FrontendController extends Controller
         return view('frond.girish');
     }
     public function about(){
-        return view('frond.about');
+        $haqqimizda=Haqqimizda::first();
+
+        return view('frond.about')->with('haqqimizda',$haqqimizda);
     }
 
     public function bizimleelaqe(){
