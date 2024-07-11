@@ -8,7 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Size extends Model
 {
     use HasFactory;
-    protected $table="sizes";
-protected $fillabe=["id ",
-"size_ad"];
+    protected $table = "sizes";
+    protected $fillabe = [
+        "id ",
+        "size_ad"
+    ];
 }

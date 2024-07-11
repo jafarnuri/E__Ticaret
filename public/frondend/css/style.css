@@ -596,7 +596,14 @@ a {
   .block-5 ul li.email:before {
     content: "\f0e0"; }
   .block-5 ul li.phone:before {
-    content: "\f095"; }
+    content: "\f097"; }
+  .cafer:before {
+      content: "\f09a"; }
+
+
+      .data__set{
+        margin-top: 20px;
+      }
 
 .block-6 {
   display: block; }
